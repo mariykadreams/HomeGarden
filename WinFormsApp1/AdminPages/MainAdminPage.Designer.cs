@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class AdminPage
+    partial class MainAdminPage
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,15 @@
             User_dataGridView.Size = new Size(831, 384);
             User_dataGridView.TabIndex = 0;
             // 
-            // AdminPage
+            // MainAdminPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1084, 866);
             Controls.Add(User_dataGridView);
-            Name = "AdminPage";
+            Name = "MainAdminPage";
             Text = "AdminPage";
+           
             ((System.ComponentModel.ISupportInitialize)User_dataGridView).EndInit();
             ResumeLayout(false);
         }

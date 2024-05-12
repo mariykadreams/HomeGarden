@@ -11,9 +11,6 @@ namespace UI1
 {
     public partial class Register : Form
     {
-        string adminE = "admin06@gmail.com";
-        string adminP = "1234";
-
         public Register()
         {
             InitializeComponent();

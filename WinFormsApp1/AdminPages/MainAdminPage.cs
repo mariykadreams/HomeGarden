@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class AdminPage : Form
+    public partial class MainAdminPage : Form
     {
-        public AdminPage()
+        public MainAdminPage()
         {
             InitializeComponent();
+            UsersDataGridView(MyApplicationService.Users);
         }
 
 

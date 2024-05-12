@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeGarden;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI;
+using UI.UserPages;
 
 namespace UI1
 {
     public partial class SignInUser : Form
     {
+        string adminE = "admin06@gmail.com";
+        string adminP = "1234";
+
         public SignInUser()
         {
             InitializeComponent();
@@ -37,6 +43,67 @@ namespace UI1
                 MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (this.radioButton_user.Checked)
+            {
+                // Перерівка, чи існує читач з введеним кодом.
+                bool userExists = false;
+                foreach (User users in MyApplicationService.Users)
+                {
+                    if (users.Email == txtUserName.Text)
+                    {
+                        userExists = true;
+                        break;
+                    }
+                }
+
+                if (!userExists)
+                {
+                    DialogResult result = MessageBox.Show("Читач з таким кодом не знайден.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (result == DialogResult.OK)
+                    {
+                        this.txtUserName.Text = String.Empty;
+                        this.txtpassword.Text = String.Empty;
+                        this.txtUserName.Focus();
+                    }
+                }
+                else
+                {
+                    MyApplication.UserMode = MyApplication.Mode.User;
+                    MyApplication.NowUser = MyApplicationService.Users.FirstOrDefault(user => user.Email == txtUserName.Text);
+
+
+                    this.Hide();
+                    UserMainPage userMainForm = new UserMainPage();
+                    userMainForm.Closed += (s, args) => this.Close();
+                    userMainForm.Show();
+                }
+            }
+
+
+
+
+            else if (this.radioButton_admin.Checked)
+            {
+                // Перевірка правильності пароля .
+                if (this.txtUserName.Text == adminE && this.txtpassword.Text == adminP)
+                {
+                    MyApplication.UserMode = MyApplication.Mode.Admin;
+                    this.Hide();
+                    var MainAdminPage = new MainAdminPage();
+                    MainAdminPage.Closed += (s, args) => this.Close();
+                    MainAdminPage.Show();
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Неправильний пароль!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (result == DialogResult.OK)
+                    {
+                        this.txtUserName.Text = String.Empty;
+                        this.txtpassword.Text = String.Empty;
+                        this.txtUserName.Focus();
+                    }
+                }
+            }
         }
 
         private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,7 +117,7 @@ namespace UI1
 
         private void SignInUser_Load(object sender, EventArgs e)
         {
-
+            MyApplicationService.UserLoadData();
         }
 
         private void radioButton_user_CheckedChanged(object sender, EventArgs e)
