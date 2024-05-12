@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeGarden", "HomeGarden\HomeGarden.csproj", "{AB8BEBED-42AA-40D9-B815-92921421D8A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "WinFormsApp1\UI.csproj", "{89F87270-2DEC-4D04-9B9D-DD4E59FABACA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8BEBED-42AA-40D9-B815-92921421D8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8BEBED-42AA-40D9-B815-92921421D8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8BEBED-42AA-40D9-B815-92921421D8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8BEBED-42AA-40D9-B815-92921421D8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F87270-2DEC-4D04-9B9D-DD4E59FABACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F87270-2DEC-4D04-9B9D-DD4E59FABACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F87270-2DEC-4D04-9B9D-DD4E59FABACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F87270-2DEC-4D04-9B9D-DD4E59FABACA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0F7B118-DDD6-4080-B0A3-F2C1AC07EA51}
+	EndGlobalSection
+EndGlobal
