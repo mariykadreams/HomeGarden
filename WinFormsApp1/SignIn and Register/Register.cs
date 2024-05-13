@@ -4,7 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HomeGarden;
+using HomeGarden.Core_Aplication;
+using HomeGarden.Models;
 
 
 namespace UI1
@@ -59,11 +60,11 @@ namespace UI1
                 return;
             }
 
-            MyApplicationService.UserLoadData(); 
+            UserService.UserLoadData(); 
 
-            if (MyApplicationService.Users == null || !MyApplicationService.Users.Any(u => u.Email == txtUserEmail.Text))
+            if (UserService.Users == null || !UserService.Users.Any(u => u.Email == txtUserEmail.Text))
             {
-                MyApplicationService.AddUser(new User(txtUserName.Text, txtUserEmail.Text, txtpassword.Text));
+                UserService.AddUser(new User(txtUserName.Text, txtUserEmail.Text, txtpassword.Text));
                 MessageBox.Show($"You have been successfully registered!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();

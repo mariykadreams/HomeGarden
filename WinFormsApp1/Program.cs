@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI;
 
 namespace UI1
 {
@@ -18,7 +19,7 @@ namespace UI1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignInUser());
+            Application.Run(new MainAdminPage());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")] //строка щоб не було блюру windows form 2
 

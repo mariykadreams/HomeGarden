@@ -1,4 +1,5 @@
-﻿using HomeGarden;
+﻿using HomeGarden.Core_Aplication;
+using HomeGarden.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,7 @@ namespace UI1
             if (this.RadioButton_user.Checked)
             {
                 bool userExists = false;
-                foreach (User user in MyApplicationService.Users)
+                foreach (User user in UserService.Users)
                 {
                     if (user.Email == txtUserName.Text && user.Password == Txtpassword.Text)
                     {
@@ -71,7 +72,7 @@ namespace UI1
                 else
                 {
                     MyApplication.UserMode = MyApplication.Mode.User;
-                    MyApplication.NowUser = MyApplicationService.Users.FirstOrDefault(user => user.Email == txtUserName.Text);
+                    MyApplication.NowUser = UserService.Users.FirstOrDefault(user => user.Email == txtUserName.Text);
 
 
                     this.Hide();
@@ -119,7 +120,7 @@ namespace UI1
 
         private void SignInUser_Load(object sender, EventArgs e)
         {
-            MyApplicationService.UserLoadData();
+            UserService.UserLoadData();
         }
 
         private void RadioButton_user_CheckedChanged(object sender, EventArgs e)

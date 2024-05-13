@@ -1,4 +1,5 @@
-﻿using HomeGarden;
+﻿using HomeGarden.Core_Aplication;
+using HomeGarden.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,27 +17,42 @@ namespace UI
         public MainAdminPage()
         {
             InitializeComponent();
-            UsersDataGridView(MyApplicationService.Users);
+            
         }
 
-
-        // Функція для заповнення dataGridVew читачів.
-        private void UsersDataGridView(List<User> Users)
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            this.User_dataGridView.DataSource = null;
-            this.User_dataGridView.DataSource = Users;
 
-            this.User_dataGridView.Columns[0].HeaderText = "Код читача";
-            this.User_dataGridView.Columns[1].HeaderText = "Повне ім'я";
-            this.User_dataGridView.Columns[2].HeaderText = "Email";
-            this.User_dataGridView.Columns[3].HeaderText = "password";
+        }
 
-            for (int i = 0; i < this.User_dataGridView.Columns.Count; i++)
-            {
-                this.User_dataGridView.Columns[i].Width = this.User_dataGridView.Width / this.User_dataGridView.Columns.Count;
-            }
-            this.User_dataGridView.ClearSelection();
+        private void User_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void allUsers1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SignUp_Button_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
