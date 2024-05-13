@@ -9,18 +9,20 @@ namespace HomeGarden
 {
     public class User
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
         public User()
         {
+            Id = Guid.NewGuid();
         }
 
-        public User(string fullname, string email, string password)
+        public User(string fullName, string email, string password)
         {
-            FullName = fullname;
+            Id = Guid.NewGuid();
+            FullName = fullName;
             Email = email;
             Password = password;
         }

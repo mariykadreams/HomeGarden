@@ -37,7 +37,7 @@ namespace UI1
         {
             if (txtUserName.Text == String.Empty || txtpassword.Text == String.Empty || txtpasswordVerification.Text == String.Empty || txtUserEmail.Text == String.Empty)
             {
-                MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill in the fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -59,9 +59,11 @@ namespace UI1
                 return;
             }
 
-            if (MyApplicationService.Users != null && MyApplicationService.Users.Where(u => u.Email == txtUserEmail.Text).Count() == 0)
+            MyApplicationService.UserLoadData(); 
+
+            if (MyApplicationService.Users == null || !MyApplicationService.Users.Any(u => u.Email == txtUserEmail.Text))
             {
-                MyApplicationService.Users.Add(new User(txtUserName.Text, txtUserEmail.Text, txtpassword.Text));
+                MyApplicationService.AddUser(new User(txtUserName.Text, txtUserEmail.Text, txtpassword.Text));
                 MessageBox.Show($"You have been successfully registered!", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
@@ -69,15 +71,13 @@ namespace UI1
                 SignIn.Closed += (s, args) => this.Close();
                 SignIn.Show();
             }
-
-
-
             else
             {
-                MessageBox.Show("This email adress is already useing!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This email address is already in use!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
+
 
         private bool IsValidEmail(string email)
         {

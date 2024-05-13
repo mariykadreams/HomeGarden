@@ -33,13 +33,13 @@
             panel2 = new Panel();
             panel3 = new Panel();
             ClearFields_Label = new Label();
-            logIn_Button = new Button();
+            LogIn_Button = new Button();
             Exit_Label = new Label();
             txtUserName = new TextBox();
-            txtpassword = new TextBox();
+            Txtpassword = new TextBox();
             Register_label = new Label();
-            radioButton_user = new RadioButton();
-            radioButton_admin = new RadioButton();
+            RadioButton_user = new RadioButton();
+            RadioButton_admin = new RadioButton();
             UserorAdmin_Label = new Label();
             splitContainer_UserEmail = new SplitContainer();
             pictureBox1 = new PictureBox();
@@ -111,20 +111,20 @@
             ClearFields_Label.Visible = false;
             ClearFields_Label.Click += ClearFields_Label_Click;
             // 
-            // logIn_Button
+            // LogIn_Button
             // 
-            logIn_Button.BackColor = Color.FromArgb(44, 110, 73);
-            logIn_Button.Cursor = Cursors.Hand;
-            logIn_Button.Font = new Font("Elephant", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logIn_Button.ForeColor = Color.White;
-            logIn_Button.Location = new Point(52, 467);
-            logIn_Button.Name = "logIn_Button";
-            logIn_Button.Size = new Size(299, 55);
-            logIn_Button.TabIndex = 11;
-            logIn_Button.Text = "Sign In";
-            logIn_Button.UseVisualStyleBackColor = false;
-            logIn_Button.Visible = false;
-            logIn_Button.Click += logIn_Button_Click;
+            LogIn_Button.BackColor = Color.FromArgb(44, 110, 73);
+            LogIn_Button.Cursor = Cursors.Hand;
+            LogIn_Button.Font = new Font("Elephant", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LogIn_Button.ForeColor = Color.White;
+            LogIn_Button.Location = new Point(52, 467);
+            LogIn_Button.Name = "LogIn_Button";
+            LogIn_Button.Size = new Size(299, 55);
+            LogIn_Button.TabIndex = 11;
+            LogIn_Button.Text = "Sign In";
+            LogIn_Button.UseVisualStyleBackColor = false;
+            LogIn_Button.Visible = false;
+            LogIn_Button.Click += LogIn_Button_Click;
             // 
             // Exit_Label
             // 
@@ -150,18 +150,18 @@
             txtUserName.Size = new Size(256, 33);
             txtUserName.TabIndex = 13;
             // 
-            // txtpassword
+            // Txtpassword
             // 
-            txtpassword.BorderStyle = BorderStyle.None;
-            txtpassword.Font = new Font("Mongolian Baiti", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtpassword.ForeColor = Color.FromArgb(44, 110, 73);
-            txtpassword.Location = new Point(3, 22);
-            txtpassword.Multiline = true;
-            txtpassword.Name = "txtpassword";
-            txtpassword.PasswordChar = '*';
-            txtpassword.Size = new Size(256, 33);
-            txtpassword.TabIndex = 14;
-            txtpassword.KeyPress += txtpassword_KeyPress;
+            Txtpassword.BorderStyle = BorderStyle.None;
+            Txtpassword.Font = new Font("Mongolian Baiti", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Txtpassword.ForeColor = Color.FromArgb(44, 110, 73);
+            Txtpassword.Location = new Point(3, 22);
+            Txtpassword.Multiline = true;
+            Txtpassword.Name = "Txtpassword";
+            Txtpassword.PasswordChar = '*';
+            Txtpassword.Size = new Size(256, 33);
+            Txtpassword.TabIndex = 14;
+            Txtpassword.KeyPress += Txtpassword_KeyPress;
             // 
             // Register_label
             // 
@@ -177,29 +177,29 @@
             Register_label.Visible = false;
             Register_label.Click += Register_label_Click;
             // 
-            // radioButton_user
+            // RadioButton_user
             // 
-            radioButton_user.AutoSize = true;
-            radioButton_user.Font = new Font("Sitka Subheading", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton_user.Location = new Point(53, 178);
-            radioButton_user.Name = "radioButton_user";
-            radioButton_user.Size = new Size(68, 28);
-            radioButton_user.TabIndex = 16;
-            radioButton_user.Text = "User";
-            radioButton_user.UseVisualStyleBackColor = true;
-            radioButton_user.CheckedChanged += radioButton_user_CheckedChanged;
+            RadioButton_user.AutoSize = true;
+            RadioButton_user.Font = new Font("Sitka Subheading", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RadioButton_user.Location = new Point(53, 178);
+            RadioButton_user.Name = "RadioButton_user";
+            RadioButton_user.Size = new Size(68, 28);
+            RadioButton_user.TabIndex = 16;
+            RadioButton_user.Text = "User";
+            RadioButton_user.UseVisualStyleBackColor = true;
+            RadioButton_user.CheckedChanged += RadioButton_user_CheckedChanged;
             // 
-            // radioButton_admin
+            // RadioButton_admin
             // 
-            radioButton_admin.AutoSize = true;
-            radioButton_admin.Font = new Font("Sitka Subheading", 10.2F, FontStyle.Bold);
-            radioButton_admin.Location = new Point(265, 178);
-            radioButton_admin.Name = "radioButton_admin";
-            radioButton_admin.Size = new Size(83, 28);
-            radioButton_admin.TabIndex = 17;
-            radioButton_admin.Text = "Admin";
-            radioButton_admin.UseVisualStyleBackColor = true;
-            radioButton_admin.CheckedChanged += radioButton_admin_CheckedChanged;
+            RadioButton_admin.AutoSize = true;
+            RadioButton_admin.Font = new Font("Sitka Subheading", 10.2F, FontStyle.Bold);
+            RadioButton_admin.Location = new Point(265, 178);
+            RadioButton_admin.Name = "RadioButton_admin";
+            RadioButton_admin.Size = new Size(83, 28);
+            RadioButton_admin.TabIndex = 17;
+            RadioButton_admin.Text = "Admin";
+            RadioButton_admin.UseVisualStyleBackColor = true;
+            RadioButton_admin.CheckedChanged += RadioButton_admin_CheckedChanged;
             // 
             // UserorAdmin_Label
             // 
@@ -260,7 +260,7 @@
             // splitContainer_UserPassword.Panel2
             // 
             splitContainer_UserPassword.Panel2.Controls.Add(Password_Label);
-            splitContainer_UserPassword.Panel2.Controls.Add(txtpassword);
+            splitContainer_UserPassword.Panel2.Controls.Add(Txtpassword);
             splitContainer_UserPassword.Size = new Size(320, 51);
             splitContainer_UserPassword.SplitterDistance = 54;
             splitContainer_UserPassword.TabIndex = 20;
@@ -295,11 +295,11 @@
             Controls.Add(splitContainer_UserPassword);
             Controls.Add(splitContainer_UserEmail);
             Controls.Add(UserorAdmin_Label);
-            Controls.Add(radioButton_admin);
-            Controls.Add(radioButton_user);
+            Controls.Add(RadioButton_admin);
+            Controls.Add(RadioButton_user);
             Controls.Add(Register_label);
             Controls.Add(Exit_Label);
-            Controls.Add(logIn_Button);
+            Controls.Add(LogIn_Button);
             Controls.Add(ClearFields_Label);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -334,13 +334,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label ClearFields_Label;
-        private System.Windows.Forms.Button logIn_Button;
+        private System.Windows.Forms.Button LogIn_Button;
         private System.Windows.Forms.Label Exit_Label;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.TextBox Txtpassword;
         private System.Windows.Forms.Label Register_label;
-        private System.Windows.Forms.RadioButton radioButton_user;
-        private System.Windows.Forms.RadioButton radioButton_admin;
+        private System.Windows.Forms.RadioButton RadioButton_user;
+        private System.Windows.Forms.RadioButton RadioButton_admin;
         private System.Windows.Forms.Label UserorAdmin_Label;
         private System.Windows.Forms.SplitContainer splitContainer_UserEmail;
         private System.Windows.Forms.SplitContainer splitContainer_UserPassword;

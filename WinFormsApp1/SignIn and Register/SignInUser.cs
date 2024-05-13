@@ -15,8 +15,8 @@ namespace UI1
 {
     public partial class SignInUser : Form
     {
-        string adminE = "admin06@gmail.com";
-        string adminP = "1234";
+        readonly string adminE = "admin06@gmail.com";
+        readonly string adminP = "1234";
 
         public SignInUser()
         {
@@ -32,37 +32,39 @@ namespace UI1
         private void ClearFields_Label_Click(object sender, EventArgs e)
         {
             txtUserName.Clear();
-            txtpassword.Clear();
+            Txtpassword.Clear();
             txtUserName.Focus();
         }
 
-        private void logIn_Button_Click(object sender, EventArgs e)
+        private void LogIn_Button_Click(object sender, EventArgs e)
         {
+
             if (this.txtUserName.Text == String.Empty)
             {
                 MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (this.radioButton_user.Checked)
+            if (this.RadioButton_user.Checked)
             {
-                // Перерівка, чи існує читач з введеним кодом.
                 bool userExists = false;
-                foreach (User users in MyApplicationService.Users)
+                foreach (User user in MyApplicationService.Users)
                 {
-                    if (users.Email == txtUserName.Text)
+                    if (user.Email == txtUserName.Text && user.Password == Txtpassword.Text)
                     {
                         userExists = true;
+                        MyApplication.NowUser = user;
                         break;
                     }
                 }
 
+
                 if (!userExists)
                 {
-                    DialogResult result = MessageBox.Show("Читач з таким кодом не знайден.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult result = MessageBox.Show("User is not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (result == DialogResult.OK)
                     {
                         this.txtUserName.Text = String.Empty;
-                        this.txtpassword.Text = String.Empty;
+                        this.Txtpassword.Text = String.Empty;
                         this.txtUserName.Focus();
                     }
                 }
@@ -73,7 +75,7 @@ namespace UI1
 
 
                     this.Hide();
-                    UserMainPage userMainForm = new UserMainPage();
+                    var userMainForm = new UserMainPage();
                     userMainForm.Closed += (s, args) => this.Close();
                     userMainForm.Show();
                 }
@@ -82,10 +84,10 @@ namespace UI1
 
 
 
-            else if (this.radioButton_admin.Checked)
+            else if (this.RadioButton_admin.Checked)
             {
                 // Перевірка правильності пароля .
-                if (this.txtUserName.Text == adminE && this.txtpassword.Text == adminP)
+                if (this.txtUserName.Text == adminE && this.Txtpassword.Text == adminP)
                 {
                     MyApplication.UserMode = MyApplication.Mode.Admin;
                     this.Hide();
@@ -95,18 +97,18 @@ namespace UI1
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Неправильний пароль!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult result = MessageBox.Show("Password is wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (result == DialogResult.OK)
                     {
                         this.txtUserName.Text = String.Empty;
-                        this.txtpassword.Text = String.Empty;
+                        this.Txtpassword.Text = String.Empty;
                         this.txtUserName.Focus();
                     }
                 }
             }
         }
 
-        private void txtpassword_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txtpassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
             if (!Char.IsDigit(number) && number != 8)
@@ -120,10 +122,10 @@ namespace UI1
             MyApplicationService.UserLoadData();
         }
 
-        private void radioButton_user_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_user_CheckedChanged(object sender, EventArgs e)
         {
             this.splitContainer_UserEmail.Visible = true;
-            this.logIn_Button.Visible = true;
+            this.LogIn_Button.Visible = true;
             this.splitContainer_UserPassword.Visible = true;
             this.panel2.Visible = true;
             this.panel3.Visible = true;
@@ -135,12 +137,12 @@ namespace UI1
             this.ClearFields_Label.Visible= true;
         }
 
-        private void radioButton_admin_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_admin_CheckedChanged(object sender, EventArgs e)
         {
             this.splitContainer_UserEmail.Visible = true;
             this.splitContainer_UserPassword.Visible = true;
             this.Register_label.Visible = false;
-            this.logIn_Button.Visible = true;
+            this.LogIn_Button.Visible = true;
             this.ClearFields_Label.Visible = true;
             this.panel2.Visible = true;
             this.panel3.Visible = true;
@@ -153,7 +155,7 @@ namespace UI1
         private void Register_label_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Register Register = new Register();
+            var Register = new Register();
             Register.Closed += (s, args) => this.Close();
             Register.Show();
         }
