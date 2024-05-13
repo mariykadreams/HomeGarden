@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.AdminPages;
 
 namespace UI
 {
@@ -17,33 +18,17 @@ namespace UI
         public MainAdminPage()
         {
             InitializeComponent();
-            
+
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void AllUsers_Button_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var allUsers = new AllUsers();
+            allUsers.FormClosed += (s, args) => this.Show();
+            allUsers.Show();
         }
 
-        private void User_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void allUsers1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SignUp_Button_Click(object sender, EventArgs e)
-        {
-          
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -53,6 +38,27 @@ namespace UI
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Date_Input_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Date_Input.Text = DateTime.Now.ToLongTimeString();
+            Time_Input.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void MainAdminPage_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void Time_Input_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
