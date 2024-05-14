@@ -20,6 +20,7 @@ namespace HomeGarden.Models
         public static void DeleteUser(User user)
         {
             Users.Remove(user);
+            SaveUsersToXml();
         }
         private static void SaveUsersToXml()
         {

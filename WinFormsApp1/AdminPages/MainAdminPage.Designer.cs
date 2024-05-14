@@ -117,6 +117,7 @@
             Home_Button.TabIndex = 38;
             Home_Button.Text = "Home";
             Home_Button.UseVisualStyleBackColor = false;
+            Home_Button.Click += Home_Button_Click;
             // 
             // pictureBox2
             // 
@@ -141,8 +142,9 @@
             AllVegetables_Button.Name = "AllVegetables_Button";
             AllVegetables_Button.Size = new Size(200, 40);
             AllVegetables_Button.TabIndex = 36;
-            AllVegetables_Button.Text = "All Vegetables";
+            AllVegetables_Button.Text = "All Plants";
             AllVegetables_Button.UseVisualStyleBackColor = false;
+            AllVegetables_Button.Click += AllVegetables_Button_Click;
             // 
             // pictureBox1
             // 

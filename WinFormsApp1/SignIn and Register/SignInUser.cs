@@ -40,7 +40,7 @@ namespace UI1
         private void LogIn_Button_Click(object sender, EventArgs e)
         {
 
-            if (this.txtUserName.Text == String.Empty)
+            if (this.txtUserName.Text == String.Empty || this.Txtpassword.Text == String.Empty)
             {
                 MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

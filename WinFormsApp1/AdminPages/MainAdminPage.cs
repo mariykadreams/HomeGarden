@@ -10,25 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.AdminPages;
+using System.Threading;
 
 namespace UI
 {
     public partial class MainAdminPage : Form
     {
+        Thread th;
+
         public MainAdminPage()
         {
             InitializeComponent();
 
         }
-
-        private void AllUsers_Button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var allUsers = new AllUsers();
-            allUsers.FormClosed += (s, args) => this.Show();
-            allUsers.Show();
-        }
-
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -57,6 +51,35 @@ namespace UI
         }
 
         private void Time_Input_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AllUsers_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(OpenformAllUsers);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void OpenformAllUsers(object obj)
+        {
+            Application.Run(new AllUsers());
+        }
+
+        private void AllVegetables_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(OpenformAllVegetables);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void OpenformAllVegetables(object obj)
+        {
+            Application.Run(new AllVegetables());
+        }
+
+        private void Home_Button_Click(object sender, EventArgs e)
         {
 
         }

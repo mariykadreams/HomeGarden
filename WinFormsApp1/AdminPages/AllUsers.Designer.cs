@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllUsers));
             panel2 = new Panel();
+            Home_Button = new Button();
             SignOut_Button = new PictureBox();
             AllVegetables_Button = new Button();
             pictureBox1 = new PictureBox();
@@ -40,7 +41,7 @@
             allUsers_Label = new Label();
             LearnMore_Label = new Label();
             User_dataGridView = new DataGridView();
-            Home_Button = new Button();
+            Delete_Button = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SignOut_Button).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -63,6 +64,21 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 612);
             panel2.TabIndex = 4;
+            // 
+            // Home_Button
+            // 
+            Home_Button.BackColor = Color.FromArgb(44, 110, 73);
+            Home_Button.Cursor = Cursors.Hand;
+            Home_Button.Font = new Font("Elephant", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Home_Button.ForeColor = Color.White;
+            Home_Button.Location = new Point(14, 214);
+            Home_Button.Margin = new Padding(3, 4, 3, 4);
+            Home_Button.Name = "Home_Button";
+            Home_Button.Size = new Size(200, 40);
+            Home_Button.TabIndex = 39;
+            Home_Button.Text = "Home";
+            Home_Button.UseVisualStyleBackColor = false;
+            Home_Button.Click += Home_Button_Click;
             // 
             // SignOut_Button
             // 
@@ -87,8 +103,9 @@
             AllVegetables_Button.Name = "AllVegetables_Button";
             AllVegetables_Button.Size = new Size(200, 40);
             AllVegetables_Button.TabIndex = 36;
-            AllVegetables_Button.Text = "All Vegetables";
+            AllVegetables_Button.Text = "All Plants";
             AllVegetables_Button.UseVisualStyleBackColor = false;
+            AllVegetables_Button.Click += AllVegetables_Button_Click;
             // 
             // pictureBox1
             // 
@@ -181,20 +198,17 @@
             User_dataGridView.RowHeadersWidth = 51;
             User_dataGridView.Size = new Size(640, 331);
             User_dataGridView.TabIndex = 5;
+            User_dataGridView.CellContentClick += User_dataGridView_CellContentClick;
             // 
-            // Home_Button
+            // Delete_Button
             // 
-            Home_Button.BackColor = Color.FromArgb(44, 110, 73);
-            Home_Button.Cursor = Cursors.Hand;
-            Home_Button.Font = new Font("Elephant", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Home_Button.ForeColor = Color.White;
-            Home_Button.Location = new Point(14, 214);
-            Home_Button.Margin = new Padding(3, 4, 3, 4);
-            Home_Button.Name = "Home_Button";
-            Home_Button.Size = new Size(200, 40);
-            Home_Button.TabIndex = 39;
-            Home_Button.Text = "Home";
-            Home_Button.UseVisualStyleBackColor = false;
+            Delete_Button.Location = new Point(658, 446);
+            Delete_Button.Name = "Delete_Button";
+            Delete_Button.Size = new Size(94, 29);
+            Delete_Button.TabIndex = 6;
+            Delete_Button.Text = "Delete";
+            Delete_Button.UseVisualStyleBackColor = false;
+            Delete_Button.Click += Delete_Button_Click;
             // 
             // AllUsers
             // 
@@ -202,11 +216,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1149, 648);
+            Controls.Add(Delete_Button);
             Controls.Add(User_dataGridView);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AllUsers";
             Text = "AllUsers";
+            Load += AllUsers_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)SignOut_Button).EndInit();
@@ -231,5 +248,6 @@
         private Label LearnMore_Label;
         private DataGridView User_dataGridView;
         private Button Home_Button;
+        private Button Delete_Button;
     }
 }

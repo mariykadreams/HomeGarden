@@ -13,10 +13,12 @@ namespace HomeGarden.Models
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public DateTime JoinDate { get; set; } //UTC time
 
         public User()
         {
             Id = Guid.NewGuid();
+            JoinDate = DateTime.UtcNow; 
         }
 
         public User(string fullName, string email, string password)
@@ -25,7 +27,7 @@ namespace HomeGarden.Models
             FullName = fullName;
             Email = email;
             Password = password;
+            JoinDate = DateTime.UtcNow;
         }
     }
-
 }
