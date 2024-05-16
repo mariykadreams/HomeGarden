@@ -93,6 +93,23 @@ namespace UI.AdminPages
             this.dataGridView1.ClearSelection();
         }
 
+        private void Delete_Button_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
 
+                if (selectedPlant != null)
+                {
+                    PlantService.DeletePlant(selectedPlant);
+                    PlantsDataGridView(PlantService.Plants);
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Delete_Button.Enabled = true;
+        }
     }
 }

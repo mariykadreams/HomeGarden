@@ -51,7 +51,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(44, 110, 73);
+            panel2.BackColor = Color.FromArgb(20, 100, 73);
             panel2.Controls.Add(Home_Button);
             panel2.Controls.Add(SignOut_Button);
             panel2.Controls.Add(AllVegetables_Button);
@@ -182,7 +182,7 @@
             LearnMore_Label.AutoSize = true;
             LearnMore_Label.Font = new Font("Sitka Small Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             LearnMore_Label.ForeColor = Color.White;
-            LearnMore_Label.Location = new Point(44, 4);
+            LearnMore_Label.Location = new Point(44, 2);
             LearnMore_Label.Name = "LearnMore_Label";
             LearnMore_Label.Size = new Size(150, 29);
             LearnMore_Label.TabIndex = 38;

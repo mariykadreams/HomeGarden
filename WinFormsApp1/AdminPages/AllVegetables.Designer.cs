@@ -198,6 +198,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(647, 328);
             dataGridView1.TabIndex = 4;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Add_Button
             // 
@@ -211,12 +212,14 @@
             // 
             // Delete_Button
             // 
+            Delete_Button.Enabled = false;
             Delete_Button.Location = new Point(797, 444);
             Delete_Button.Name = "Delete_Button";
             Delete_Button.Size = new Size(94, 29);
             Delete_Button.TabIndex = 6;
             Delete_Button.Text = "Delete";
             Delete_Button.UseVisualStyleBackColor = true;
+            Delete_Button.Click += Delete_Button_Click;
             // 
             // View_Button
             // 
