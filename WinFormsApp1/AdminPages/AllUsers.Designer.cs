@@ -51,7 +51,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(20, 100, 73);
+            panel2.BackColor = Color.FromArgb(44, 110, 73);
             panel2.Controls.Add(Home_Button);
             panel2.Controls.Add(SignOut_Button);
             panel2.Controls.Add(AllVegetables_Button);

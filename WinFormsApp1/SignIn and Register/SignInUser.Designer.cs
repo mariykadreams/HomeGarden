@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInUser));
             Welcome_Label = new Label();
             LearnMore_Label = new Label();
             panel2 = new Panel();
@@ -231,9 +232,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(4, 5);
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(13, 15);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 39);
+            pictureBox1.Size = new Size(21, 22);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 

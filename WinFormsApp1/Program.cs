@@ -19,7 +19,7 @@ namespace UI1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainAdminPage());
+            Application.Run(new SignInUser());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")] //строка щоб не було блюру windows form 2
 

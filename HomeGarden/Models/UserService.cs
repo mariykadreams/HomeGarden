@@ -47,5 +47,11 @@ namespace HomeGarden.Models
             public List<User> Users { get; set; }
         }
 
+        public static User GetUserByEmail(string email)
+        {
+            return Users.FirstOrDefault(u => u.Email == email);
+        }
+
+
     }
 }

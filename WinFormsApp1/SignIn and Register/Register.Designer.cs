@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             splitContainer_UserPassword = new SplitContainer();
             pictureBox2 = new PictureBox();
             Password_Label = new Label();
@@ -148,10 +149,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(4, 6);
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(15, 22);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 49);
+            pictureBox1.Size = new Size(23, 23);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
@@ -265,7 +269,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = UI.Properties.Resources.Untitled_design__1_;
-            pictureBox3.Location = new Point(5, 13);
+            pictureBox3.Location = new Point(7, 13);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(40, 40);
@@ -402,6 +406,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Register";
             Text = "Register";
+            Load += Register_Load;
             splitContainer_UserPassword.Panel1.ResumeLayout(false);
             splitContainer_UserPassword.Panel1.PerformLayout();
             splitContainer_UserPassword.Panel2.ResumeLayout(false);

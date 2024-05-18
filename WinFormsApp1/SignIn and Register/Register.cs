@@ -15,7 +15,7 @@ namespace UI1
         public Register()
         {
             InitializeComponent();
-        }  
+        }
 
         private void ClearFields_Label_Click(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace UI1
                 return;
             }
 
-            UserService.UserLoadData(); 
+            UserService.UserLoadData();
 
             if (UserService.Users == null || !UserService.Users.Any(u => u.Email == txtUserEmail.Text))
             {
@@ -95,6 +95,11 @@ namespace UI1
             {
                 return false;
             }
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
