@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace HomeGarden.Plants
 {
-    [XmlInclude(typeof(Vegetable)), XmlInclude(typeof(Flower))]
+    [XmlInclude(typeof(Vegetable))]
+    [XmlInclude(typeof(Flower))]
+    [XmlInclude(typeof(Other))]
     public class Plant
     {
         public Guid Id { get; set; }
@@ -18,13 +16,15 @@ namespace HomeGarden.Plants
         public string Status { get; set; }
         public string ShortDesciption { get; set; }
         public string Level { get; set; }
+        public int WateringFrequency { get; set; }
 
         public Plant()
         {
             Id = Guid.NewGuid();
+            Status = "Healthy";
         }
 
-        public Plant(string name, string species, string location, string shortDesciption, string level)
+        public Plant(string name, string species, string location, string shortDesciption, string level, int wateringFrequency)
         {
             Id = Guid.NewGuid();
             Name = name;
@@ -33,7 +33,7 @@ namespace HomeGarden.Plants
             Status = "Healthy";
             ShortDesciption = shortDesciption;
             Level = level;
+            WateringFrequency = wateringFrequency;
         }
     }
-
 }

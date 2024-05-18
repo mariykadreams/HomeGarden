@@ -67,11 +67,12 @@
             allVegetables_Label.AutoSize = true;
             allVegetables_Label.Font = new Font("Elephant", 11.999999F);
             allVegetables_Label.ForeColor = Color.White;
-            allVegetables_Label.Location = new Point(633, 7);
+            allVegetables_Label.Location = new Point(671, 7);
             allVegetables_Label.Name = "allVegetables_Label";
-            allVegetables_Label.Size = new Size(154, 26);
+            allVegetables_Label.Size = new Size(112, 26);
             allVegetables_Label.TabIndex = 40;
-            allVegetables_Label.Text = "All Vegetables";
+            allVegetables_Label.Text = "All Plants";
+            allVegetables_Label.Click += allVegetables_Label_Click;
             // 
             // LearnMore_Label
             // 
@@ -192,17 +193,18 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(44, 110, 73);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(398, 83);
+            dataGridView1.Location = new Point(314, 83);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(647, 328);
+            dataGridView1.Size = new Size(784, 472);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Add_Button
             // 
-            Add_Button.Location = new Point(533, 444);
+            Add_Button.Location = new Point(537, 591);
             Add_Button.Name = "Add_Button";
             Add_Button.Size = new Size(94, 29);
             Add_Button.TabIndex = 5;
@@ -213,7 +215,7 @@
             // Delete_Button
             // 
             Delete_Button.Enabled = false;
-            Delete_Button.Location = new Point(797, 444);
+            Delete_Button.Location = new Point(801, 591);
             Delete_Button.Name = "Delete_Button";
             Delete_Button.Size = new Size(94, 29);
             Delete_Button.TabIndex = 6;
@@ -223,7 +225,7 @@
             // 
             // View_Button
             // 
-            View_Button.Location = new Point(671, 444);
+            View_Button.Location = new Point(671, 591);
             View_Button.Name = "View_Button";
             View_Button.Size = new Size(94, 29);
             View_Button.TabIndex = 7;

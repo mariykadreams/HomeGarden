@@ -111,5 +111,10 @@ namespace UI.AdminPages
         {
             this.Delete_Button.Enabled = true;
         }
+
+        private void allVegetables_Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

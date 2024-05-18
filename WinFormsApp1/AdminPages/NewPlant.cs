@@ -60,6 +60,26 @@ namespace UI.AdminPages
                 PlantAdded = true;
             }
 
+            else if (typeOfPlant == "flower")
+            {
+                if (textBox_color.Text == String.Empty)
+                {
+                    MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                PlantService.AddPlant(new Flower(this.textBox_name.Text, this.textBox_color.Text, this.textBox_species.Text,
+                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text));
+                MessageBox.Show($"A new flower has been added to the database.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlantAdded = true;
+            }
+            else if (typeOfPlant == "other")
+            {
+                PlantService.AddPlant(new Plant(this.textBox_name.Text, this.textBox_species.Text,
+                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text));
+                MessageBox.Show($"A new plant has been added to the database.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlantAdded = true;
+            }
+
             this.Close();
         }
 
