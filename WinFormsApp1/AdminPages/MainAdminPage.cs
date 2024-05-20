@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.AdminPages;
 using System.Threading;
+using HomeGarden.Plants;
 
 namespace UI
 {
@@ -48,6 +49,11 @@ namespace UI
         private void MainAdminPage_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            PlantService.LoadPlantsFromXml();
+
+            label2.Text = UserService.Users.Count.ToString();
+            label3.Text = PlantService.Plants.Count.ToString();
+
         }
 
         private void Time_Input_Click(object sender, EventArgs e)
@@ -80,6 +86,26 @@ namespace UI
         }
 
         private void Home_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void All_Users_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

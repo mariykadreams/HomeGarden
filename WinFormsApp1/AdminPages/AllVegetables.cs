@@ -144,6 +144,7 @@ namespace UI.AdminPages
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.Delete_Button.Enabled = true;
+            this.View_Button.Enabled = true;
         }
 
         private void allVegetables_Label_Click(object sender, EventArgs e)
@@ -182,6 +183,27 @@ namespace UI.AdminPages
         private void radioButton_Filtration_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void View_Button_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
+
+                if (selectedPlant != null)
+                {
+                    var plantInfo = new PlantInfo(selectedPlant);
+                    plantInfo.FormClosed += PlantInfo_FormClosed;
+                    plantInfo.ShowDialog();
+                }
+            }
+        }
+
+        private void PlantInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PlantService.LoadPlantsFromXml();
+            PlantsDataGridView(PlantService.Plants);
         }
     }
 }

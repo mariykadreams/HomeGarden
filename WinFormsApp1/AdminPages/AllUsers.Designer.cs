@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllUsers));
             panel2 = new Panel();
+            panel3 = new Panel();
             Home_Button = new Button();
             SignOut_Button = new PictureBox();
             AllVegetables_Button = new Button();
@@ -42,16 +43,21 @@
             LearnMore_Label = new Label();
             User_dataGridView = new DataGridView();
             Delete_Button = new Button();
+            panel4 = new Panel();
+            panel5 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SignOut_Button).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)User_dataGridView).BeginInit();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(44, 110, 73);
+            panel2.Controls.Add(panel3);
             panel2.Controls.Add(Home_Button);
             panel2.Controls.Add(SignOut_Button);
             panel2.Controls.Add(AllVegetables_Button);
@@ -64,6 +70,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 612);
             panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(250, 6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(250, 125);
+            panel3.TabIndex = 12;
             // 
             // Home_Button
             // 
@@ -190,19 +203,29 @@
             // 
             // User_dataGridView
             // 
-            User_dataGridView.BackgroundColor = Color.FromArgb(44, 110, 73);
+            User_dataGridView.AllowUserToAddRows = false;
+            User_dataGridView.AllowUserToDeleteRows = false;
+            User_dataGridView.BackgroundColor = Color.White;
             User_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            User_dataGridView.GridColor = Color.White;
-            User_dataGridView.Location = new Point(376, 74);
+            User_dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            User_dataGridView.GridColor = Color.FromArgb(44, 110, 73);
+            User_dataGridView.Location = new Point(-1, -2);
+            User_dataGridView.Margin = new Padding(1);
+            User_dataGridView.MultiSelect = false;
             User_dataGridView.Name = "User_dataGridView";
-            User_dataGridView.RowHeadersWidth = 51;
-            User_dataGridView.Size = new Size(640, 331);
+            User_dataGridView.ReadOnly = true;
+            User_dataGridView.RowHeadersVisible = false;
+            User_dataGridView.RowHeadersWidth = 102;
+            User_dataGridView.RowTemplate.Height = 40;
+            User_dataGridView.ScrollBars = ScrollBars.Vertical;
+            User_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            User_dataGridView.Size = new Size(890, 488);
             User_dataGridView.TabIndex = 5;
             User_dataGridView.CellContentClick += User_dataGridView_CellContentClick;
             // 
             // Delete_Button
             // 
-            Delete_Button.Location = new Point(658, 446);
+            Delete_Button.Location = new Point(377, 46);
             Delete_Button.Name = "Delete_Button";
             Delete_Button.Size = new Size(94, 29);
             Delete_Button.TabIndex = 6;
@@ -210,14 +233,32 @@
             Delete_Button.UseVisualStyleBackColor = false;
             Delete_Button.Click += Delete_Button_Click;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(Delete_Button);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(250, 522);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(899, 126);
+            panel4.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(User_dataGridView);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(250, 36);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(899, 486);
+            panel5.TabIndex = 12;
+            // 
             // AllUsers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1149, 648);
-            Controls.Add(Delete_Button);
-            Controls.Add(User_dataGridView);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -231,6 +272,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)User_dataGridView).EndInit();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -249,5 +292,8 @@
         private DataGridView User_dataGridView;
         private Button Home_Button;
         private Button Delete_Button;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel5;
     }
 }

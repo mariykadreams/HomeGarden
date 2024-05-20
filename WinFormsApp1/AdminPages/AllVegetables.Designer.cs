@@ -30,9 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllVegetables));
             panel1 = new Panel();
+            panel5 = new Panel();
             allVegetables_Label = new Label();
             LearnMore_Label = new Label();
             panel2 = new Panel();
+            panel3 = new Panel();
             Home_Button = new Button();
             pictureBox2 = new PictureBox();
             AllVegetables_Button = new Button();
@@ -46,16 +48,21 @@
             View_Button = new Button();
             radioButton_All = new RadioButton();
             radioButton_Filtration = new RadioButton();
+            panel4 = new Panel();
+            panel_Data = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel4.SuspendLayout();
+            panel_Data.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(44, 110, 73);
+            panel1.Controls.Add(panel5);
             panel1.Controls.Add(allVegetables_Label);
             panel1.Controls.Add(LearnMore_Label);
             panel1.Dock = DockStyle.Top;
@@ -63,6 +70,13 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1149, 36);
             panel1.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(250, 36);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(803, 491);
+            panel5.TabIndex = 11;
             // 
             // allVegetables_Label
             // 
@@ -90,6 +104,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(44, 110, 73);
+            panel2.Controls.Add(panel3);
             panel2.Controls.Add(Home_Button);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(AllVegetables_Button);
@@ -102,6 +117,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 612);
             panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(250, 487);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(250, 125);
+            panel3.TabIndex = 39;
             // 
             // Home_Button
             // 
@@ -195,82 +217,118 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(44, 110, 73);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(300, 101);
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.GridColor = Color.FromArgb(44, 110, 73);
+            dataGridView1.Location = new Point(1, 1);
+            dataGridView1.Margin = new Padding(1);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(807, 437);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 102;
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView1.ScrollBars = ScrollBars.Vertical;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(899, 486);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick;
             // 
             // Add_Button
             // 
-            Add_Button.Location = new Point(538, 581);
+            Add_Button.BackColor = Color.White;
+            Add_Button.Location = new Point(19, 46);
             Add_Button.Name = "Add_Button";
             Add_Button.Size = new Size(94, 29);
             Add_Button.TabIndex = 5;
             Add_Button.Text = "Add";
-            Add_Button.UseVisualStyleBackColor = true;
+            Add_Button.UseVisualStyleBackColor = false;
             Add_Button.Click += Add_Button_Click;
             // 
             // Delete_Button
             // 
+            Delete_Button.BackColor = Color.White;
             Delete_Button.Enabled = false;
-            Delete_Button.Location = new Point(802, 581);
+            Delete_Button.Location = new Point(283, 46);
             Delete_Button.Name = "Delete_Button";
             Delete_Button.Size = new Size(94, 29);
             Delete_Button.TabIndex = 6;
             Delete_Button.Text = "Delete";
-            Delete_Button.UseVisualStyleBackColor = true;
+            Delete_Button.UseVisualStyleBackColor = false;
             Delete_Button.Click += Delete_Button_Click;
             // 
             // View_Button
             // 
-            View_Button.Location = new Point(672, 581);
+            View_Button.BackColor = Color.White;
+            View_Button.Enabled = false;
+            View_Button.Location = new Point(153, 46);
             View_Button.Name = "View_Button";
             View_Button.Size = new Size(94, 29);
             View_Button.TabIndex = 7;
             View_Button.Text = "View";
-            View_Button.UseVisualStyleBackColor = true;
+            View_Button.UseVisualStyleBackColor = false;
+            View_Button.Click += View_Button_Click;
             // 
             // radioButton_All
             // 
             radioButton_All.AutoSize = true;
+            radioButton_All.BackColor = SystemColors.Control;
             radioButton_All.Checked = true;
-            radioButton_All.Location = new Point(310, 60);
+            radioButton_All.Location = new Point(663, 52);
             radioButton_All.Name = "radioButton_All";
             radioButton_All.Size = new Size(48, 24);
             radioButton_All.TabIndex = 8;
             radioButton_All.TabStop = true;
             radioButton_All.Text = "All";
-            radioButton_All.UseVisualStyleBackColor = true;
+            radioButton_All.UseVisualStyleBackColor = false;
             radioButton_All.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton_Filtration
             // 
             radioButton_Filtration.AutoSize = true;
-            radioButton_Filtration.Location = new Point(538, 60);
+            radioButton_Filtration.BackColor = SystemColors.Control;
+            radioButton_Filtration.Location = new Point(764, 51);
             radioButton_Filtration.Name = "radioButton_Filtration";
             radioButton_Filtration.Size = new Size(89, 24);
             radioButton_Filtration.TabIndex = 9;
             radioButton_Filtration.Text = "Filtration";
-            radioButton_Filtration.UseVisualStyleBackColor = true;
+            radioButton_Filtration.UseVisualStyleBackColor = false;
             radioButton_Filtration.CheckedChanged += radioButton_Filtration_CheckedChanged;
             radioButton_Filtration.Click += radioButton_Filtration_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(Delete_Button);
+            panel4.Controls.Add(radioButton_Filtration);
+            panel4.Controls.Add(Add_Button);
+            panel4.Controls.Add(radioButton_All);
+            panel4.Controls.Add(View_Button);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(250, 522);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(899, 126);
+            panel4.TabIndex = 10;
+            // 
+            // panel_Data
+            // 
+            panel_Data.Controls.Add(dataGridView1);
+            panel_Data.Dock = DockStyle.Fill;
+            panel_Data.Location = new Point(250, 36);
+            panel_Data.Name = "panel_Data";
+            panel_Data.Size = new Size(899, 486);
+            panel_Data.TabIndex = 11;
             // 
             // AllVegetables
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 648);
-            Controls.Add(radioButton_Filtration);
-            Controls.Add(radioButton_All);
-            Controls.Add(View_Button);
-            Controls.Add(Delete_Button);
-            Controls.Add(Add_Button);
-            Controls.Add(dataGridView1);
+            Controls.Add(panel_Data);
+            Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -284,8 +342,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel_Data.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -307,5 +367,9 @@
         private Button View_Button;
         private RadioButton radioButton_All;
         private RadioButton radioButton_Filtration;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel_Data;
     }
 }

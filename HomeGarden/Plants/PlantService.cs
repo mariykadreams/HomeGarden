@@ -21,6 +21,31 @@ namespace HomeGarden.Plants
             SavePlantsToXml();
         }
 
+        public static void UpdatePlant(Plant updatedPlant)
+        {
+            var existingPlant = Plants.FirstOrDefault(p => p.Id == updatedPlant.Id);
+            if (existingPlant != null)
+            {
+                existingPlant.Name = updatedPlant.Name;
+                existingPlant.Species = updatedPlant.Species;
+                existingPlant.ShortDesciption = updatedPlant.ShortDesciption;
+                existingPlant.Level = updatedPlant.Level;
+                existingPlant.WateringFrequency = updatedPlant.WateringFrequency;
+                existingPlant.Location = updatedPlant.Location;
+
+                if (existingPlant is Flower existingFlower && updatedPlant is Flower updatedFlower)
+                {
+                    existingFlower.Color = updatedFlower.Color;
+                }
+                else if (existingPlant is Vegetable existingVegetable && updatedPlant is Vegetable updatedVegetable)
+                {
+                    existingVegetable.Size = updatedVegetable.Size;
+                }
+            }
+
+            SavePlantsToXml();
+        }
+
         private static void SavePlantsToXml()
         {
             XmlSerializer serializer = new XmlSerializer(typeof(PlantsList));

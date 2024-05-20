@@ -1,6 +1,6 @@
-﻿namespace UI.AdminPages
+﻿namespace UI.Multifunctional
 {
-    partial class NewPlant
+    partial class PlantInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Type_Label = new Label();
-            Vegetable_radioButton = new RadioButton();
-            Flower_radioButton = new RadioButton();
-            Other_radioButton = new RadioButton();
-            splitContainer = new SplitContainer();
-            label1 = new Label();
-            textBox_name = new TextBox();
             panel1 = new Panel();
+            splitContainer8 = new SplitContainer();
+            label9 = new Label();
+            Input_type = new Label();
             splitContainer7 = new SplitContainer();
             label8 = new Label();
             numericUpDown_Water = new NumericUpDown();
@@ -57,13 +53,16 @@
             splitContainer1 = new SplitContainer();
             label2 = new Label();
             textBox_species = new TextBox();
-            button1 = new Button();
-            Cencel_button = new Button();
-            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
-            splitContainer.Panel1.SuspendLayout();
-            splitContainer.Panel2.SuspendLayout();
-            splitContainer.SuspendLayout();
+            splitContainer = new SplitContainer();
+            label1 = new Label();
+            textBox_name = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
+            splitContainer8.Panel1.SuspendLayout();
+            splitContainer8.Panel2.SuspendLayout();
+            splitContainer8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.Panel2.SuspendLayout();
@@ -93,90 +92,15 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
+            splitContainer.Panel1.SuspendLayout();
+            splitContainer.Panel2.SuspendLayout();
+            splitContainer.SuspendLayout();
             SuspendLayout();
-            // 
-            // Type_Label
-            // 
-            Type_Label.AutoSize = true;
-            Type_Label.Font = new Font("Elephant", 11.999999F);
-            Type_Label.Location = new Point(371, 62);
-            Type_Label.Name = "Type_Label";
-            Type_Label.Size = new Size(147, 26);
-            Type_Label.TabIndex = 0;
-            Type_Label.Text = "Type of plant:";
-            Type_Label.Click += Type_Label_Click;
-            // 
-            // Vegetable_radioButton
-            // 
-            Vegetable_radioButton.AutoSize = true;
-            Vegetable_radioButton.Location = new Point(264, 115);
-            Vegetable_radioButton.Name = "Vegetable_radioButton";
-            Vegetable_radioButton.Size = new Size(97, 24);
-            Vegetable_radioButton.TabIndex = 1;
-            Vegetable_radioButton.TabStop = true;
-            Vegetable_radioButton.Text = "Vegetable";
-            Vegetable_radioButton.UseVisualStyleBackColor = true;
-            Vegetable_radioButton.CheckedChanged += Vegetable_radioButton_CheckedChanged;
-            // 
-            // Flower_radioButton
-            // 
-            Flower_radioButton.AutoSize = true;
-            Flower_radioButton.Location = new Point(409, 115);
-            Flower_radioButton.Name = "Flower_radioButton";
-            Flower_radioButton.Size = new Size(74, 24);
-            Flower_radioButton.TabIndex = 2;
-            Flower_radioButton.TabStop = true;
-            Flower_radioButton.Text = "Flower";
-            Flower_radioButton.UseVisualStyleBackColor = true;
-            Flower_radioButton.CheckedChanged += Flower_radioButton_CheckedChanged;
-            // 
-            // Other_radioButton
-            // 
-            Other_radioButton.AutoSize = true;
-            Other_radioButton.Location = new Point(546, 115);
-            Other_radioButton.Name = "Other_radioButton";
-            Other_radioButton.Size = new Size(67, 24);
-            Other_radioButton.TabIndex = 4;
-            Other_radioButton.TabStop = true;
-            Other_radioButton.Text = "Other";
-            Other_radioButton.UseVisualStyleBackColor = true;
-            Other_radioButton.CheckedChanged += Other_radioButton_CheckedChanged;
-            // 
-            // splitContainer
-            // 
-            splitContainer.Location = new Point(12, 17);
-            splitContainer.Name = "splitContainer";
-            // 
-            // splitContainer.Panel1
-            // 
-            splitContainer.Panel1.Controls.Add(label1);
-            // 
-            // splitContainer.Panel2
-            // 
-            splitContainer.Panel2.Controls.Add(textBox_name);
-            splitContainer.Size = new Size(300, 52);
-            splitContainer.SplitterDistance = 74;
-            splitContainer.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(49, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Name";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textBox_name
-            // 
-            textBox_name.Location = new Point(15, 15);
-            textBox_name.Name = "textBox_name";
-            textBox_name.Size = new Size(198, 27);
-            textBox_name.TabIndex = 0;
             // 
             // panel1
             // 
+            panel1.Controls.Add(splitContainer8);
             panel1.Controls.Add(splitContainer7);
             panel1.Controls.Add(splitContainer6);
             panel1.Controls.Add(splitContainer5);
@@ -185,14 +109,49 @@
             panel1.Controls.Add(splitContainer4);
             panel1.Controls.Add(splitContainer1);
             panel1.Controls.Add(splitContainer);
-            panel1.Location = new Point(106, 158);
+            panel1.Location = new Point(30, 56);
             panel1.Name = "panel1";
-            panel1.Size = new Size(672, 367);
-            panel1.TabIndex = 5;
+            panel1.Size = new Size(672, 361);
+            panel1.TabIndex = 22;
+            // 
+            // splitContainer8
+            // 
+            splitContainer8.Location = new Point(16, 26);
+            splitContainer8.Name = "splitContainer8";
+            // 
+            // splitContainer8.Panel1
+            // 
+            splitContainer8.Panel1.Controls.Add(label9);
+            // 
+            // splitContainer8.Panel2
+            // 
+            splitContainer8.Panel2.Controls.Add(Input_type);
+            splitContainer8.Size = new Size(300, 52);
+            splitContainer8.SplitterDistance = 74;
+            splitContainer8.TabIndex = 23;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(6, 15);
+            label9.Name = "label9";
+            label9.Size = new Size(40, 20);
+            label9.TabIndex = 0;
+            label9.Text = "Type";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Input_type
+            // 
+            Input_type.AutoSize = true;
+            Input_type.Location = new Point(18, 15);
+            Input_type.Name = "Input_type";
+            Input_type.Size = new Size(80, 20);
+            Input_type.TabIndex = 0;
+            Input_type.Text = "Type_input";
             // 
             // splitContainer7
             // 
-            splitContainer7.Location = new Point(356, 17);
+            splitContainer7.Location = new Point(357, 26);
             splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -203,13 +162,13 @@
             // 
             splitContainer7.Panel2.Controls.Add(numericUpDown_Water);
             splitContainer7.Size = new Size(300, 52);
-            splitContainer7.SplitterDistance = 74;
+            splitContainer7.SplitterDistance = 52;
             splitContainer7.TabIndex = 7;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(2, 15);
+            label8.Location = new Point(3, 15);
             label8.Name = "label8";
             label8.Size = new Size(48, 20);
             label8.TabIndex = 0;
@@ -228,7 +187,7 @@
             // 
             // splitContainer6
             // 
-            splitContainer6.Location = new Point(12, 191);
+            splitContainer6.Location = new Point(357, 84);
             splitContainer6.Name = "splitContainer6";
             // 
             // splitContainer6.Panel1
@@ -239,13 +198,13 @@
             // 
             splitContainer6.Panel2.Controls.Add(comboBox1_Level);
             splitContainer6.Size = new Size(300, 52);
-            splitContainer6.SplitterDistance = 77;
+            splitContainer6.SplitterDistance = 55;
             splitContainer6.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 16);
+            label7.Location = new Point(3, 16);
             label7.Name = "label7";
             label7.Size = new Size(43, 20);
             label7.TabIndex = 0;
@@ -263,7 +222,7 @@
             // 
             // splitContainer5
             // 
-            splitContainer5.Location = new Point(356, 133);
+            splitContainer5.Location = new Point(357, 200);
             splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
@@ -296,7 +255,7 @@
             // 
             // splitContainer3
             // 
-            splitContainer3.Location = new Point(12, 249);
+            splitContainer3.Location = new Point(16, 258);
             splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -306,14 +265,14 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(textBox_desciption);
-            splitContainer3.Size = new Size(644, 115);
-            splitContainer3.SplitterDistance = 180;
+            splitContainer3.Size = new Size(653, 99);
+            splitContainer3.SplitterDistance = 182;
             splitContainer3.TabIndex = 9;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 16);
+            label4.Location = new Point(3, 15);
             label4.Name = "label4";
             label4.Size = new Size(85, 20);
             label4.TabIndex = 0;
@@ -322,15 +281,15 @@
             // 
             // textBox_desciption
             // 
-            textBox_desciption.Location = new Point(3, 3);
+            textBox_desciption.Location = new Point(6, 12);
             textBox_desciption.Multiline = true;
             textBox_desciption.Name = "textBox_desciption";
-            textBox_desciption.Size = new Size(445, 100);
+            textBox_desciption.Size = new Size(458, 84);
             textBox_desciption.TabIndex = 1;
             // 
             // splitContainer2
             // 
-            splitContainer2.Location = new Point(12, 133);
+            splitContainer2.Location = new Point(16, 200);
             splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -366,7 +325,7 @@
             // 
             // splitContainer4
             // 
-            splitContainer4.Location = new Point(356, 75);
+            splitContainer4.Location = new Point(357, 142);
             splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -393,7 +352,6 @@
             // comboBox1_size
             // 
             comboBox1_size.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1_size.Enabled = false;
             comboBox1_size.Items.AddRange(new object[] { "Small", "Medium", "Large" });
             comboBox1_size.Location = new Point(9, 13);
             comboBox1_size.Name = "comboBox1_size";
@@ -402,7 +360,7 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Location = new Point(12, 75);
+            splitContainer1.Location = new Point(16, 142);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -433,48 +391,77 @@
             textBox_species.Size = new Size(198, 27);
             textBox_species.TabIndex = 0;
             // 
-            // button1
+            // splitContainer
             // 
-            button1.Location = new Point(264, 560);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 6;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            splitContainer.Location = new Point(16, 84);
+            splitContainer.Name = "splitContainer";
             // 
-            // Cencel_button
+            // splitContainer.Panel1
             // 
-            Cencel_button.Location = new Point(546, 560);
-            Cencel_button.Name = "Cencel_button";
-            Cencel_button.Size = new Size(94, 29);
-            Cencel_button.TabIndex = 7;
-            Cencel_button.Text = "Cancel";
-            Cencel_button.UseVisualStyleBackColor = true;
-            Cencel_button.Click += Cencel_button_Click;
+            splitContainer.Panel1.Controls.Add(label1);
             // 
-            // NewPlant
+            // splitContainer.Panel2
+            // 
+            splitContainer.Panel2.Controls.Add(textBox_name);
+            splitContainer.Size = new Size(300, 52);
+            splitContainer.SplitterDistance = 72;
+            splitContainer.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(49, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Name";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox_name
+            // 
+            textBox_name.Location = new Point(15, 15);
+            textBox_name.Name = "textBox_name";
+            textBox_name.Size = new Size(198, 27);
+            textBox_name.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(214, 504);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 24;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(436, 504);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 25;
+            btnCancel.Text = "Cencel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // PlantInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(861, 630);
-            Controls.Add(Cencel_button);
-            Controls.Add(button1);
+            ClientSize = new Size(756, 566);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
             Controls.Add(panel1);
-            Controls.Add(Other_radioButton);
-            Controls.Add(Flower_radioButton);
-            Controls.Add(Vegetable_radioButton);
-            Controls.Add(Type_Label);
-            Name = "NewPlant";
-            Text = "NewVegetable";
-            Load += NewPlant_Load;
-            splitContainer.Panel1.ResumeLayout(false);
-            splitContainer.Panel1.PerformLayout();
-            splitContainer.Panel2.ResumeLayout(false);
-            splitContainer.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
-            splitContainer.ResumeLayout(false);
+            Name = "PlantInfo";
+            Text = "PlantInfo";
+            Load += PlantInfo_Load;
             panel1.ResumeLayout(false);
+            splitContainer8.Panel1.ResumeLayout(false);
+            splitContainer8.Panel1.PerformLayout();
+            splitContainer8.Panel2.ResumeLayout(false);
+            splitContainer8.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer8).EndInit();
+            splitContainer8.ResumeLayout(false);
             splitContainer7.Panel1.ResumeLayout(false);
             splitContainer7.Panel1.PerformLayout();
             splitContainer7.Panel2.ResumeLayout(false);
@@ -514,42 +501,45 @@
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            splitContainer.Panel1.ResumeLayout(false);
+            splitContainer.Panel1.PerformLayout();
+            splitContainer.Panel2.ResumeLayout(false);
+            splitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
+            splitContainer.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label Type_Label;
-        private RadioButton Vegetable_radioButton;
-        private RadioButton Flower_radioButton;
-        private RadioButton Other_radioButton;
-        private SplitContainer splitContainer;
-        private Label label1;
         private Panel panel1;
-        private TextBox textBox_name;
-        private SplitContainer splitContainer1;
-        private Label label2;
-        private TextBox textBox_species;
-        private SplitContainer splitContainer2;
-        private Label label3;
-        private SplitContainer splitContainer3;
-        private Label label4;
-        private TextBox textBox_desciption;
-        private SplitContainer splitContainer4;
-        private Label label5;
-        private ComboBox comboBox1_size;
-        private ComboBox comboBox_location;
-        private SplitContainer splitContainer5;
-        private Label label6;
-        private TextBox textBox_color;
-        private Button button1;
-        private SplitContainer splitContainer6;
-        private Label label7;
-        private ComboBox comboBox1_Level;
+        private SplitContainer splitContainer8;
+        private Label label9;
         private SplitContainer splitContainer7;
         private Label label8;
         private NumericUpDown numericUpDown_Water;
-        private Button Cencel_button;
+        private SplitContainer splitContainer6;
+        private Label label7;
+        private ComboBox comboBox1_Level;
+        private SplitContainer splitContainer5;
+        private Label label6;
+        private TextBox textBox_color;
+        private SplitContainer splitContainer3;
+        private Label label4;
+        private TextBox textBox_desciption;
+        private SplitContainer splitContainer2;
+        private Label label3;
+        private ComboBox comboBox_location;
+        private SplitContainer splitContainer4;
+        private Label label5;
+        private ComboBox comboBox1_size;
+        private SplitContainer splitContainer1;
+        private Label label2;
+        private TextBox textBox_species;
+        private SplitContainer splitContainer;
+        private Label label1;
+        private TextBox textBox_name;
+        private Label Input_type;
+        private Button btnSave;
+        private Button btnCancel;
     }
 }

@@ -38,7 +38,6 @@
             AllVegetables_Button = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            AllUsers_Button = new Button();
             Welcome_label = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -87,7 +86,6 @@
             panel2.Controls.Add(AllVegetables_Button);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(AllUsers_Button);
             panel2.Controls.Add(Welcome_label);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 36);
@@ -127,7 +125,7 @@
             AllVegetables_Button.Cursor = Cursors.Hand;
             AllVegetables_Button.Font = new Font("Elephant", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AllVegetables_Button.ForeColor = Color.White;
-            AllVegetables_Button.Location = new Point(14, 335);
+            AllVegetables_Button.Location = new Point(14, 276);
             AllVegetables_Button.Margin = new Padding(3, 4, 3, 4);
             AllVegetables_Button.Name = "AllVegetables_Button";
             AllVegetables_Button.Size = new Size(200, 40);
@@ -157,20 +155,6 @@
             label1.TabIndex = 33;
             label1.Text = "Sign Out";
             label1.Click += label1_Click;
-            // 
-            // AllUsers_Button
-            // 
-            AllUsers_Button.BackColor = Color.FromArgb(44, 110, 73);
-            AllUsers_Button.Cursor = Cursors.Hand;
-            AllUsers_Button.Font = new Font("Elephant", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AllUsers_Button.ForeColor = Color.White;
-            AllUsers_Button.Location = new Point(14, 274);
-            AllUsers_Button.Margin = new Padding(3, 4, 3, 4);
-            AllUsers_Button.Name = "AllUsers_Button";
-            AllUsers_Button.Size = new Size(200, 40);
-            AllUsers_Button.TabIndex = 32;
-            AllUsers_Button.Text = "All Users";
-            AllUsers_Button.UseVisualStyleBackColor = false;
             // 
             // Welcome_label
             // 
@@ -214,7 +198,6 @@
         private Button AllVegetables_Button;
         private PictureBox pictureBox1;
         private Label label1;
-        private Button AllUsers_Button;
         private Label Welcome_label;
     }
 }

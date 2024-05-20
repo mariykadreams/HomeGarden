@@ -42,6 +42,14 @@
             AllUsers_Button = new Button();
             Welcome_label = new Label();
             panel3 = new Panel();
+            panel5 = new Panel();
+            pictureBox4 = new PictureBox();
+            label3 = new Label();
+            label2_plants = new Label();
+            panel4 = new Panel();
+            pictureBox3 = new PictureBox();
+            label2 = new Label();
+            All_Users = new Label();
             Time_Input = new Label();
             Date_Input = new Label();
             Time_Label = new Label();
@@ -53,6 +61,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -197,6 +209,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(panel5);
+            panel3.Controls.Add(panel4);
             panel3.Controls.Add(Time_Input);
             panel3.Controls.Add(Date_Input);
             panel3.Controls.Add(Time_Label);
@@ -206,11 +220,91 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(899, 612);
             panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(pictureBox4);
+            panel5.Controls.Add(label3);
+            panel5.Controls.Add(label2_plants);
+            panel5.Location = new Point(562, 154);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(241, 195);
+            panel5.TabIndex = 5;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(58, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(112, 112);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(108, 156);
+            label3.Name = "label3";
+            label3.Size = new Size(15, 20);
+            label3.TabIndex = 1;
+            label3.Text = "_";
+            // 
+            // label2_plants
+            // 
+            label2_plants.AutoSize = true;
+            label2_plants.Location = new Point(36, 126);
+            label2_plants.Name = "label2_plants";
+            label2_plants.Size = new Size(174, 20);
+            label2_plants.TabIndex = 0;
+            label2_plants.Text = "Current amount of plants";
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(pictureBox3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(All_Users);
+            panel4.Location = new Point(79, 154);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(241, 195);
+            panel4.TabIndex = 4;
+            panel4.Paint += panel4_Paint;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(58, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(112, 112);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(105, 156);
+            label2.Name = "label2";
+            label2.Size = new Size(15, 20);
+            label2.TabIndex = 1;
+            label2.Text = "_";
+            label2.Click += label2_Click;
+            // 
+            // All_Users
+            // 
+            All_Users.AutoSize = true;
+            All_Users.Location = new Point(36, 126);
+            All_Users.Name = "All_Users";
+            All_Users.Size = new Size(167, 20);
+            All_Users.TabIndex = 0;
+            All_Users.Text = "Current amount of users";
+            All_Users.Click += All_Users_Click;
             // 
             // Time_Input
             // 
             Time_Input.AutoSize = true;
-            Time_Input.Location = new Point(133, 47);
+            Time_Input.Location = new Point(430, 45);
             Time_Input.Name = "Time_Input";
             Time_Input.Size = new Size(41, 20);
             Time_Input.TabIndex = 3;
@@ -220,7 +314,7 @@
             // Date_Input
             // 
             Date_Input.AutoSize = true;
-            Date_Input.Location = new Point(133, 88);
+            Date_Input.Location = new Point(430, 86);
             Date_Input.Name = "Date_Input";
             Date_Input.Size = new Size(42, 20);
             Date_Input.TabIndex = 2;
@@ -230,7 +324,7 @@
             // Time_Label
             // 
             Time_Label.AutoSize = true;
-            Time_Label.Location = new Point(62, 88);
+            Time_Label.Location = new Point(359, 86);
             Time_Label.Name = "Time_Label";
             Time_Label.Size = new Size(42, 20);
             Time_Label.TabIndex = 1;
@@ -239,7 +333,7 @@
             // Date_Label
             // 
             Date_Label.AutoSize = true;
-            Date_Label.Location = new Point(62, 47);
+            Date_Label.Location = new Point(359, 45);
             Date_Label.Name = "Date_Label";
             Date_Label.Size = new Size(41, 20);
             Date_Label.TabIndex = 0;
@@ -271,6 +365,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -293,5 +393,13 @@
         private Label Time_Label;
         private Label Date_Label;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel5;
+        private Label label3;
+        private Label label2_plants;
+        private Panel panel4;
+        private Label label2;
+        private Label All_Users;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
     }
 }
