@@ -122,6 +122,16 @@ namespace HomeGarden.Plants
         {
             return source.Where(plant => plant.WateringFrequency == wateringFrequency).ToList();
         }
+        public static List<Plant> SearchPlantsBySize(List<Plant> source, string size)
+        {
+            return source.OfType<Vegetable>().Where(plant => plant.Size.Contains(size, StringComparison.OrdinalIgnoreCase)).ToList<Plant>();
+        }
+
+        public static List<Plant> SearchPlantsByColor(List<Plant> source, string color)
+        {
+            return source.OfType<Flower>().Where(plant => plant.Color.Contains(color, StringComparison.OrdinalIgnoreCase)).ToList<Plant>();
+        }
+
         #endregion
 
     }

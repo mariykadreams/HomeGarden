@@ -38,6 +38,13 @@ namespace UI.Multifunctional
             SearchResultList = PlantService.SearchPlantsByType(PlantService.Plants, "Other");
         }
 
+        private void radioButton_All_Click(object sender, EventArgs e)
+        {
+            this.comboBox1_size.Enabled = true;
+            this.textBox_color.Enabled = true;
+            SearchResultList = PlantService.Plants;
+        }
+
         private void Cencel_button_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to cancel the operation? Data will be lost.",
@@ -63,6 +70,12 @@ namespace UI.Multifunctional
             if (checkBox_Level.Checked && !string.IsNullOrEmpty(numericUpDown_Water.Text))
                 filteredList = PlantService.SearchPlantsByLevel(filteredList, numericUpDown_Water.Text);
 
+            if (checkBox_Size.Checked && !string.IsNullOrEmpty(comboBox1_size.Text))
+                filteredList = PlantService.SearchPlantsBySize(filteredList, comboBox1_size.Text);
+
+            if (checkBox_Color.Checked && !string.IsNullOrEmpty(textBox_color.Text))
+                filteredList = PlantService.SearchPlantsByColor(filteredList, textBox_color.Text);
+
             MessageBox.Show($"Found {filteredList.Count} plants");
 
             SearchResultList = filteredList;
@@ -71,5 +84,7 @@ namespace UI.Multifunctional
 
             this.Hide();
         }
+
+        
     }
 }

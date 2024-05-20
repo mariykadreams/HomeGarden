@@ -20,7 +20,8 @@ namespace HomeGarden.Core_Aplication
         {
             Vegetable,
             Flower,
-            Other
+            Other,
+            All
         }
 
         public static User NowUser { get; set; }

@@ -32,31 +32,32 @@
             button_Search = new Button();
             panel1 = new Panel();
             splitContainer7 = new SplitContainer();
+            checkBox_Water = new CheckBox();
             numericUpDown_Water = new NumericUpDown();
             splitContainer6 = new SplitContainer();
+            checkBox_Level = new CheckBox();
             comboBox1_Level = new ComboBox();
             splitContainer5 = new SplitContainer();
+            checkBox_Color = new CheckBox();
             textBox_color = new TextBox();
             splitContainer2 = new SplitContainer();
+            checkBox_Location = new CheckBox();
             comboBox_location = new ComboBox();
             splitContainer4 = new SplitContainer();
+            checkBox_Size = new CheckBox();
             comboBox1_size = new ComboBox();
             splitContainer1 = new SplitContainer();
+            checkBox1 = new CheckBox();
+            checkBox_Species = new CheckBox();
             textBox_species = new TextBox();
             splitContainer = new SplitContainer();
+            checkBox_Name = new CheckBox();
             textBox_name = new TextBox();
             Other_radioButton = new RadioButton();
             Flower_radioButton = new RadioButton();
             Vegetable_radioButton = new RadioButton();
             Type_Label = new Label();
-            checkBox_Name = new CheckBox();
-            checkBox_Species = new CheckBox();
-            checkBox1 = new CheckBox();
-            checkBox_Location = new CheckBox();
-            checkBox_Level = new CheckBox();
-            checkBox_Water = new CheckBox();
-            checkBox_Size = new CheckBox();
-            checkBox_Color = new CheckBox();
+            radioButton_All = new RadioButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
             splitContainer7.Panel1.SuspendLayout();
@@ -139,6 +140,16 @@
             splitContainer7.SplitterDistance = 74;
             splitContainer7.TabIndex = 7;
             // 
+            // checkBox_Water
+            // 
+            checkBox_Water.AutoSize = true;
+            checkBox_Water.Location = new Point(3, 14);
+            checkBox_Water.Name = "checkBox_Water";
+            checkBox_Water.Size = new Size(70, 24);
+            checkBox_Water.TabIndex = 16;
+            checkBox_Water.Text = "Water";
+            checkBox_Water.UseVisualStyleBackColor = true;
+            // 
             // numericUpDown_Water
             // 
             numericUpDown_Water.Location = new Point(14, 13);
@@ -165,6 +176,16 @@
             splitContainer6.SplitterDistance = 77;
             splitContainer6.TabIndex = 8;
             // 
+            // checkBox_Level
+            // 
+            checkBox_Level.AutoSize = true;
+            checkBox_Level.Location = new Point(3, 15);
+            checkBox_Level.Name = "checkBox_Level";
+            checkBox_Level.Size = new Size(65, 24);
+            checkBox_Level.TabIndex = 16;
+            checkBox_Level.Text = "Level";
+            checkBox_Level.UseVisualStyleBackColor = true;
+            // 
             // comboBox1_Level
             // 
             comboBox1_Level.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -190,6 +211,16 @@
             splitContainer5.SplitterDistance = 65;
             splitContainer5.TabIndex = 10;
             // 
+            // checkBox_Color
+            // 
+            checkBox_Color.AutoSize = true;
+            checkBox_Color.Location = new Point(0, 15);
+            checkBox_Color.Name = "checkBox_Color";
+            checkBox_Color.Size = new Size(67, 24);
+            checkBox_Color.TabIndex = 18;
+            checkBox_Color.Text = "Color";
+            checkBox_Color.UseVisualStyleBackColor = true;
+            // 
             // textBox_color
             // 
             textBox_color.Location = new Point(8, 13);
@@ -212,6 +243,16 @@
             splitContainer2.Size = new Size(300, 52);
             splitContainer2.SplitterDistance = 85;
             splitContainer2.TabIndex = 8;
+            // 
+            // checkBox_Location
+            // 
+            checkBox_Location.AutoSize = true;
+            checkBox_Location.Location = new Point(3, 15);
+            checkBox_Location.Name = "checkBox_Location";
+            checkBox_Location.Size = new Size(88, 24);
+            checkBox_Location.TabIndex = 16;
+            checkBox_Location.Text = "Location";
+            checkBox_Location.UseVisualStyleBackColor = true;
             // 
             // comboBox_location
             // 
@@ -239,6 +280,16 @@
             splitContainer4.SplitterDistance = 62;
             splitContainer4.TabIndex = 7;
             // 
+            // checkBox_Size
+            // 
+            checkBox_Size.AutoSize = true;
+            checkBox_Size.Location = new Point(3, 15);
+            checkBox_Size.Name = "checkBox_Size";
+            checkBox_Size.Size = new Size(58, 24);
+            checkBox_Size.TabIndex = 17;
+            checkBox_Size.Text = "Size";
+            checkBox_Size.UseVisualStyleBackColor = true;
+            // 
             // comboBox1_size
             // 
             comboBox1_size.Enabled = false;
@@ -265,6 +316,26 @@
             splitContainer1.SplitterDistance = 85;
             splitContainer1.TabIndex = 7;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(3, 14);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(81, 24);
+            checkBox1.TabIndex = 16;
+            checkBox1.Text = "Species";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Species
+            // 
+            checkBox_Species.AutoSize = true;
+            checkBox_Species.Location = new Point(6, 15);
+            checkBox_Species.Name = "checkBox_Species";
+            checkBox_Species.Size = new Size(81, 24);
+            checkBox_Species.TabIndex = 15;
+            checkBox_Species.Text = "Species";
+            checkBox_Species.UseVisualStyleBackColor = true;
+            // 
             // textBox_species
             // 
             textBox_species.Location = new Point(4, 13);
@@ -288,6 +359,16 @@
             splitContainer.SplitterDistance = 74;
             splitContainer.TabIndex = 6;
             // 
+            // checkBox_Name
+            // 
+            checkBox_Name.AutoSize = true;
+            checkBox_Name.Location = new Point(3, 15);
+            checkBox_Name.Name = "checkBox_Name";
+            checkBox_Name.Size = new Size(71, 24);
+            checkBox_Name.TabIndex = 1;
+            checkBox_Name.Text = "Name";
+            checkBox_Name.UseVisualStyleBackColor = true;
+            // 
             // textBox_name
             // 
             textBox_name.Location = new Point(15, 15);
@@ -298,7 +379,7 @@
             // Other_radioButton
             // 
             Other_radioButton.AutoSize = true;
-            Other_radioButton.Location = new Point(468, 118);
+            Other_radioButton.Location = new Point(420, 118);
             Other_radioButton.Name = "Other_radioButton";
             Other_radioButton.Size = new Size(67, 24);
             Other_radioButton.TabIndex = 11;
@@ -310,7 +391,7 @@
             // Flower_radioButton
             // 
             Flower_radioButton.AutoSize = true;
-            Flower_radioButton.Location = new Point(331, 118);
+            Flower_radioButton.Location = new Point(283, 118);
             Flower_radioButton.Name = "Flower_radioButton";
             Flower_radioButton.Size = new Size(74, 24);
             Flower_radioButton.TabIndex = 10;
@@ -322,7 +403,7 @@
             // Vegetable_radioButton
             // 
             Vegetable_radioButton.AutoSize = true;
-            Vegetable_radioButton.Location = new Point(186, 118);
+            Vegetable_radioButton.Location = new Point(138, 118);
             Vegetable_radioButton.Name = "Vegetable_radioButton";
             Vegetable_radioButton.Size = new Size(97, 24);
             Vegetable_radioButton.TabIndex = 9;
@@ -340,91 +421,24 @@
             Type_Label.TabIndex = 8;
             Type_Label.Text = "Type of plant:";
             // 
-            // checkBox_Name
+            // radioButton_All
             // 
-            checkBox_Name.AutoSize = true;
-            checkBox_Name.Location = new Point(3, 15);
-            checkBox_Name.Name = "checkBox_Name";
-            checkBox_Name.Size = new Size(71, 24);
-            checkBox_Name.TabIndex = 1;
-            checkBox_Name.Text = "Name";
-            checkBox_Name.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Species
-            // 
-            checkBox_Species.AutoSize = true;
-            checkBox_Species.Location = new Point(6, 15);
-            checkBox_Species.Name = "checkBox_Species";
-            checkBox_Species.Size = new Size(81, 24);
-            checkBox_Species.TabIndex = 15;
-            checkBox_Species.Text = "Species";
-            checkBox_Species.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(3, 14);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(81, 24);
-            checkBox1.TabIndex = 16;
-            checkBox1.Text = "Species";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Location
-            // 
-            checkBox_Location.AutoSize = true;
-            checkBox_Location.Location = new Point(3, 15);
-            checkBox_Location.Name = "checkBox_Location";
-            checkBox_Location.Size = new Size(88, 24);
-            checkBox_Location.TabIndex = 16;
-            checkBox_Location.Text = "Location";
-            checkBox_Location.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Level
-            // 
-            checkBox_Level.AutoSize = true;
-            checkBox_Level.Location = new Point(3, 15);
-            checkBox_Level.Name = "checkBox_Level";
-            checkBox_Level.Size = new Size(65, 24);
-            checkBox_Level.TabIndex = 16;
-            checkBox_Level.Text = "Level";
-            checkBox_Level.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Water
-            // 
-            checkBox_Water.AutoSize = true;
-            checkBox_Water.Location = new Point(3, 14);
-            checkBox_Water.Name = "checkBox_Water";
-            checkBox_Water.Size = new Size(70, 24);
-            checkBox_Water.TabIndex = 16;
-            checkBox_Water.Text = "Water";
-            checkBox_Water.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Size
-            // 
-            checkBox_Size.AutoSize = true;
-            checkBox_Size.Location = new Point(3, 15);
-            checkBox_Size.Name = "checkBox_Size";
-            checkBox_Size.Size = new Size(58, 24);
-            checkBox_Size.TabIndex = 17;
-            checkBox_Size.Text = "Size";
-            checkBox_Size.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Color
-            // 
-            checkBox_Color.AutoSize = true;
-            checkBox_Color.Location = new Point(0, 15);
-            checkBox_Color.Name = "checkBox_Color";
-            checkBox_Color.Size = new Size(67, 24);
-            checkBox_Color.TabIndex = 18;
-            checkBox_Color.Text = "Color";
-            checkBox_Color.UseVisualStyleBackColor = true;
+            radioButton_All.AutoSize = true;
+            radioButton_All.Location = new Point(532, 118);
+            radioButton_All.Name = "radioButton_All";
+            radioButton_All.Size = new Size(48, 24);
+            radioButton_All.TabIndex = 15;
+            radioButton_All.TabStop = true;
+            radioButton_All.Text = "All";
+            radioButton_All.UseVisualStyleBackColor = true;
+            radioButton_All.Click += radioButton_All_Click;
             // 
             // Filtration
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(732, 626);
+            Controls.Add(radioButton_All);
             Controls.Add(Cencel_button);
             Controls.Add(button_Search);
             Controls.Add(panel1);
@@ -509,5 +523,6 @@
         private CheckBox checkBox_Level;
         private CheckBox checkBox_Color;
         private CheckBox checkBox_Size;
+        private RadioButton radioButton_All;
     }
 }
