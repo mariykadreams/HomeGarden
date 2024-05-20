@@ -44,6 +44,8 @@
             Add_Button = new Button();
             Delete_Button = new Button();
             View_Button = new Button();
+            radioButton_All = new RadioButton();
+            radioButton_Filtration = new RadioButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -67,7 +69,7 @@
             allVegetables_Label.AutoSize = true;
             allVegetables_Label.Font = new Font("Elephant", 11.999999F);
             allVegetables_Label.ForeColor = Color.White;
-            allVegetables_Label.Location = new Point(671, 7);
+            allVegetables_Label.Location = new Point(653, 7);
             allVegetables_Label.Name = "allVegetables_Label";
             allVegetables_Label.Size = new Size(112, 26);
             allVegetables_Label.TabIndex = 40;
@@ -195,16 +197,17 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(44, 110, 73);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(314, 83);
+            dataGridView1.Location = new Point(300, 101);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(784, 472);
+            dataGridView1.Size = new Size(807, 437);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick;
             // 
             // Add_Button
             // 
-            Add_Button.Location = new Point(537, 591);
+            Add_Button.Location = new Point(538, 581);
             Add_Button.Name = "Add_Button";
             Add_Button.Size = new Size(94, 29);
             Add_Button.TabIndex = 5;
@@ -215,7 +218,7 @@
             // Delete_Button
             // 
             Delete_Button.Enabled = false;
-            Delete_Button.Location = new Point(801, 591);
+            Delete_Button.Location = new Point(802, 581);
             Delete_Button.Name = "Delete_Button";
             Delete_Button.Size = new Size(94, 29);
             Delete_Button.TabIndex = 6;
@@ -225,18 +228,45 @@
             // 
             // View_Button
             // 
-            View_Button.Location = new Point(671, 591);
+            View_Button.Location = new Point(672, 581);
             View_Button.Name = "View_Button";
             View_Button.Size = new Size(94, 29);
             View_Button.TabIndex = 7;
             View_Button.Text = "View";
             View_Button.UseVisualStyleBackColor = true;
             // 
+            // radioButton_All
+            // 
+            radioButton_All.AutoSize = true;
+            radioButton_All.Checked = true;
+            radioButton_All.Location = new Point(310, 60);
+            radioButton_All.Name = "radioButton_All";
+            radioButton_All.Size = new Size(48, 24);
+            radioButton_All.TabIndex = 8;
+            radioButton_All.TabStop = true;
+            radioButton_All.Text = "All";
+            radioButton_All.UseVisualStyleBackColor = true;
+            radioButton_All.CheckedChanged += radioButton1_CheckedChanged;
+            // 
+            // radioButton_Filtration
+            // 
+            radioButton_Filtration.AutoSize = true;
+            radioButton_Filtration.Location = new Point(538, 60);
+            radioButton_Filtration.Name = "radioButton_Filtration";
+            radioButton_Filtration.Size = new Size(89, 24);
+            radioButton_Filtration.TabIndex = 9;
+            radioButton_Filtration.Text = "Filtration";
+            radioButton_Filtration.UseVisualStyleBackColor = true;
+            radioButton_Filtration.CheckedChanged += radioButton_Filtration_CheckedChanged;
+            radioButton_Filtration.Click += radioButton_Filtration_Click;
+            // 
             // AllVegetables
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 648);
+            Controls.Add(radioButton_Filtration);
+            Controls.Add(radioButton_All);
             Controls.Add(View_Button);
             Controls.Add(Delete_Button);
             Controls.Add(Add_Button);
@@ -255,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -274,5 +305,7 @@
         private Button Add_Button;
         private Button Delete_Button;
         private Button View_Button;
+        private RadioButton radioButton_All;
+        private RadioButton radioButton_Filtration;
     }
 }

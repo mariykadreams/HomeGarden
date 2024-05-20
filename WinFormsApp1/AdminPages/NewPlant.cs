@@ -1,4 +1,6 @@
-﻿using HomeGarden.Plants;
+﻿using System;
+using System.Windows.Forms;
+using HomeGarden.Plants;
 
 namespace UI.AdminPages
 {
@@ -35,7 +37,9 @@ namespace UI.AdminPages
 
         private void NewPlant_Load(object sender, EventArgs e)
         {
-
+            numericUpDown_Water.Minimum = 1;
+            numericUpDown_Water.Maximum = 365;
+            numericUpDown_Water.Value = 1; // default value
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +51,8 @@ namespace UI.AdminPages
                 return;
             }
 
+            int wateringFrequency = (int)numericUpDown_Water.Value;
+
             if (typeOfPlant == "vegetable")
             {
                 if (comboBox1_size.Text == String.Empty)
@@ -54,12 +60,11 @@ namespace UI.AdminPages
                     MessageBox.Show("Fill in the field!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                PlantService.AddPlant(new Vegetable(this.textBox_name.Text, this.textBox_species.Text,
-                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_size.Text, comboBox1_Level.Text));
+                PlantService.AddPlant(new Vegetable(this.textBox_name.Text, this.comboBox1_size.Text, this.textBox_species.Text,
+                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text, wateringFrequency));
                 MessageBox.Show($"A new vegetable has been added to the database.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PlantAdded = true;
             }
-
             else if (typeOfPlant == "flower")
             {
                 if (textBox_color.Text == String.Empty)
@@ -68,14 +73,14 @@ namespace UI.AdminPages
                     return;
                 }
                 PlantService.AddPlant(new Flower(this.textBox_name.Text, this.textBox_color.Text, this.textBox_species.Text,
-                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text));
+                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text, wateringFrequency));
                 MessageBox.Show($"A new flower has been added to the database.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PlantAdded = true;
             }
             else if (typeOfPlant == "other")
             {
-                PlantService.AddPlant(new Plant(this.textBox_name.Text, this.textBox_species.Text,
-                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text));
+                PlantService.AddPlant(new Other(this.textBox_name.Text, this.textBox_species.Text,
+                this.comboBox_location.Text, textBox_desciption.Text, comboBox1_Level.Text, wateringFrequency));
                 MessageBox.Show($"A new plant has been added to the database.", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PlantAdded = true;
             }
@@ -83,32 +88,12 @@ namespace UI.AdminPages
             this.Close();
         }
 
-        private void textBox_desciption_TextChanged(object sender, EventArgs e)
+        private void Cencel_button_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_Level_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void Type_Label_Click(object sender, EventArgs e)
         {
 
         }

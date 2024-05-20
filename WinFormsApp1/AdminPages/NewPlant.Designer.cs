@@ -36,6 +36,9 @@
             label1 = new Label();
             textBox_name = new TextBox();
             panel1 = new Panel();
+            splitContainer7 = new SplitContainer();
+            label8 = new Label();
+            numericUpDown_Water = new NumericUpDown();
             splitContainer6 = new SplitContainer();
             label7 = new Label();
             comboBox1_Level = new ComboBox();
@@ -55,11 +58,17 @@
             label2 = new Label();
             textBox_species = new TextBox();
             button1 = new Button();
+            Cencel_button = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
             splitContainer.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
+            splitContainer7.Panel1.SuspendLayout();
+            splitContainer7.Panel2.SuspendLayout();
+            splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_Water).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer6).BeginInit();
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.Panel2.SuspendLayout();
@@ -94,6 +103,7 @@
             Type_Label.Size = new Size(99, 20);
             Type_Label.TabIndex = 0;
             Type_Label.Text = "Type of plant:";
+            Type_Label.Click += Type_Label_Click;
             // 
             // Vegetable_radioButton
             // 
@@ -166,6 +176,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(splitContainer7);
             panel1.Controls.Add(splitContainer6);
             panel1.Controls.Add(splitContainer5);
             panel1.Controls.Add(splitContainer3);
@@ -177,6 +188,42 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(672, 324);
             panel1.TabIndex = 5;
+            // 
+            // splitContainer7
+            // 
+            splitContainer7.Location = new Point(356, 17);
+            splitContainer7.Name = "splitContainer7";
+            // 
+            // splitContainer7.Panel1
+            // 
+            splitContainer7.Panel1.Controls.Add(label8);
+            // 
+            // splitContainer7.Panel2
+            // 
+            splitContainer7.Panel2.Controls.Add(numericUpDown_Water);
+            splitContainer7.Size = new Size(300, 52);
+            splitContainer7.SplitterDistance = 74;
+            splitContainer7.TabIndex = 7;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 15);
+            label8.Name = "label8";
+            label8.Size = new Size(48, 20);
+            label8.TabIndex = 0;
+            label8.Text = "Water";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown_Water
+            // 
+            numericUpDown_Water.Location = new Point(14, 13);
+            numericUpDown_Water.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numericUpDown_Water.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown_Water.Name = "numericUpDown_Water";
+            numericUpDown_Water.Size = new Size(150, 27);
+            numericUpDown_Water.TabIndex = 0;
+            numericUpDown_Water.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // splitContainer6
             // 
@@ -212,7 +259,6 @@
             comboBox1_Level.Name = "comboBox1_Level";
             comboBox1_Level.Size = new Size(195, 28);
             comboBox1_Level.TabIndex = 0;
-            comboBox1_Level.SelectedIndexChanged += comboBox1_Level_SelectedIndexChanged;
             // 
             // splitContainer5
             // 
@@ -279,7 +325,6 @@
             textBox_desciption.Name = "textBox_desciption";
             textBox_desciption.Size = new Size(197, 27);
             textBox_desciption.TabIndex = 1;
-            textBox_desciption.TextChanged += textBox_desciption_TextChanged;
             // 
             // splitContainer2
             // 
@@ -296,7 +341,6 @@
             splitContainer2.Size = new Size(300, 52);
             splitContainer2.SplitterDistance = 75;
             splitContainer2.TabIndex = 8;
-            splitContainer2.SplitterMoved += splitContainer2_SplitterMoved;
             // 
             // label3
             // 
@@ -343,7 +387,6 @@
             label5.TabIndex = 0;
             label5.Text = "Size";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            label5.Click += label5_Click;
             // 
             // comboBox1_size
             // 
@@ -389,7 +432,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(362, 574);
+            button1.Location = new Point(237, 560);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 6;
@@ -397,11 +440,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // Cencel_button
+            // 
+            Cencel_button.Location = new Point(503, 560);
+            Cencel_button.Name = "Cencel_button";
+            Cencel_button.Size = new Size(94, 29);
+            Cencel_button.TabIndex = 7;
+            Cencel_button.Text = "Cancel";
+            Cencel_button.UseVisualStyleBackColor = true;
+            Cencel_button.Click += Cencel_button_Click;
+            // 
             // NewPlant
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(861, 630);
+            Controls.Add(Cencel_button);
             Controls.Add(button1);
             Controls.Add(panel1);
             Controls.Add(Other_radioButton);
@@ -418,6 +472,12 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
             splitContainer.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            splitContainer7.Panel1.ResumeLayout(false);
+            splitContainer7.Panel1.PerformLayout();
+            splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
+            splitContainer7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown_Water).EndInit();
             splitContainer6.Panel1.ResumeLayout(false);
             splitContainer6.Panel1.PerformLayout();
             splitContainer6.Panel2.ResumeLayout(false);
@@ -484,5 +544,9 @@
         private SplitContainer splitContainer6;
         private Label label7;
         private ComboBox comboBox1_Level;
+        private SplitContainer splitContainer7;
+        private Label label8;
+        private NumericUpDown numericUpDown_Water;
+        private Button Cencel_button;
     }
 }

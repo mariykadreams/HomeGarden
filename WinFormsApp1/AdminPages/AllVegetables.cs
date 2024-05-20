@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using HomeGarden.Plants;
+using UI.Multifunctional;
 
 namespace UI.AdminPages
 {
@@ -72,6 +73,7 @@ namespace UI.AdminPages
         {
 
         }
+
         private void PlantsDataGridView(List<Plant> plants)
         {
             this.dataGridView1.DataSource = null;
@@ -85,12 +87,44 @@ namespace UI.AdminPages
             this.dataGridView1.Columns[5].HeaderText = "Status";
             this.dataGridView1.Columns[6].HeaderText = "Short Description";
             this.dataGridView1.Columns[7].HeaderText = "Level";
+            this.dataGridView1.Columns[8].HeaderText = "Water";
 
             for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
             {
                 this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
             }
             this.dataGridView1.ClearSelection();
+        }
+
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    PlantService.SortPlantsByType();
+                    break;
+                case 2:
+                    PlantService.SortPlantsByName();
+                    break;
+                case 3:
+                    PlantService.SortPlantsBySpecies();
+                    break;
+                case 4:
+                    PlantService.SortPlantsByLocation();
+                    break;
+                case 5:
+                    PlantService.SortPlantsByStatus();
+                    break;
+                case 7:
+                    PlantService.SortPlantsByLevel();
+                    break;
+                case 8:
+                    PlantService.SortPlantsByWateringFrequency();
+                    break;
+                default:
+                    break;
+            }
+            PlantsDataGridView(PlantService.Plants);
         }
 
         private void Delete_Button_Click(object sender, EventArgs e)
@@ -113,6 +147,39 @@ namespace UI.AdminPages
         }
 
         private void allVegetables_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            PlantsDataGridView(PlantService.Plants);
+        }
+
+        private void radioButton_Filtration_Click(object sender, EventArgs e)
+        {
+            var filtration = new Filtration();
+            filtration.FilterApplied += Filtration_FilterApplied;
+            filtration.ShowDialog();
+        }
+
+        private void Filtration_FilterApplied(object sender, EventArgs e)
+        {
+            var filtration = sender as Filtration;
+            if (filtration != null)
+            {
+                PlantsDataGridView(filtration.SearchResultList);
+
+                if (filtration.SearchResultList.Count == 0)
+                {
+                    MessageBox.Show("Unfortunately, nothing was found for your request.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                filtration.Close();
+            }
+        }
+
+        private void radioButton_Filtration_CheckedChanged(object sender, EventArgs e)
         {
 
         }
