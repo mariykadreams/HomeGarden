@@ -162,7 +162,6 @@
             Txtpassword.PasswordChar = '*';
             Txtpassword.Size = new Size(256, 33);
             Txtpassword.TabIndex = 14;
-            Txtpassword.KeyPress += Txtpassword_KeyPress;
             // 
             // Register_label
             // 

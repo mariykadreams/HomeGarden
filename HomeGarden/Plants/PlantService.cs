@@ -113,6 +113,13 @@ namespace HomeGarden.Plants
         #endregion
 
         #region search
+
+        public static List<Plant> SearchPlantsById(List<Plant> source, string partialId)
+        {
+            return source.Where(plant => plant.Id.ToString().Contains(partialId, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+
         public static List<Plant> SearchPlantsByType(List<Plant> source, string type)
         {
             return source.Where(plant => plant.Type == type || type == String.Empty).ToList();
@@ -142,11 +149,11 @@ namespace HomeGarden.Plants
         {
             return source.Where(plant => plant.Level.Contains(level, StringComparison.OrdinalIgnoreCase)).ToList();
         }
-
         public static List<Plant> SearchPlantsByWateringFrequency(List<Plant> source, int wateringFrequency)
         {
-            return source.Where(plant => plant.WateringFrequency == wateringFrequency).ToList();
+            return source.Where(plant => plant.WateringFrequency <= wateringFrequency).ToList();
         }
+
         public static List<Plant> SearchPlantsBySize(List<Plant> source, string size)
         {
             return source.OfType<Vegetable>().Where(plant => plant.Size.Contains(size, StringComparison.OrdinalIgnoreCase)).ToList<Plant>();

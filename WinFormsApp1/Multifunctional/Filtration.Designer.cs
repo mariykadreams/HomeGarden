@@ -58,6 +58,9 @@
             checkBox_Water = new CheckBox();
             numericUpDown_Water = new NumericUpDown();
             panel1 = new Panel();
+            splitContainer3 = new SplitContainer();
+            checkBox_Id = new CheckBox();
+            textBox_Id = new TextBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
@@ -88,11 +91,15 @@
             splitContainer7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown_Water).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
             SuspendLayout();
             // 
             // Cencel_button
             // 
-            Cencel_button.Location = new Point(468, 522);
+            Cencel_button.Location = new Point(470, 561);
             Cencel_button.Name = "Cencel_button";
             Cencel_button.Size = new Size(94, 29);
             Cencel_button.TabIndex = 14;
@@ -102,7 +109,7 @@
             // 
             // button_Search
             // 
-            button_Search.Location = new Point(186, 522);
+            button_Search.Location = new Point(188, 561);
             button_Search.Name = "button_Search";
             button_Search.Size = new Size(94, 29);
             button_Search.TabIndex = 13;
@@ -170,7 +177,7 @@
             // 
             // splitContainer
             // 
-            splitContainer.Location = new Point(12, 17);
+            splitContainer.Location = new Point(11, 82);
             splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
@@ -203,7 +210,7 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Location = new Point(12, 75);
+            splitContainer1.Location = new Point(11, 140);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -247,7 +254,7 @@
             // 
             // splitContainer4
             // 
-            splitContainer4.Location = new Point(349, 133);
+            splitContainer4.Location = new Point(348, 198);
             splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -283,7 +290,7 @@
             // 
             // splitContainer2
             // 
-            splitContainer2.Location = new Point(12, 133);
+            splitContainer2.Location = new Point(11, 198);
             splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -319,7 +326,7 @@
             // 
             // splitContainer5
             // 
-            splitContainer5.Location = new Point(349, 191);
+            splitContainer5.Location = new Point(348, 256);
             splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
@@ -352,7 +359,7 @@
             // 
             // splitContainer6
             // 
-            splitContainer6.Location = new Point(12, 191);
+            splitContainer6.Location = new Point(11, 256);
             splitContainer6.Name = "splitContainer6";
             // 
             // splitContainer6.Panel1
@@ -387,7 +394,7 @@
             // 
             // splitContainer7
             // 
-            splitContainer7.Location = new Point(349, 17);
+            splitContainer7.Location = new Point(347, 24);
             splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -423,6 +430,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(splitContainer3);
             panel1.Controls.Add(splitContainer7);
             panel1.Controls.Add(splitContainer6);
             panel1.Controls.Add(splitContainer5);
@@ -430,10 +438,43 @@
             panel1.Controls.Add(splitContainer4);
             panel1.Controls.Add(splitContainer1);
             panel1.Controls.Add(splitContainer);
-            panel1.Location = new Point(27, 209);
+            panel1.Location = new Point(29, 175);
             panel1.Name = "panel1";
-            panel1.Size = new Size(672, 269);
+            panel1.Size = new Size(672, 327);
             panel1.TabIndex = 12;
+            // 
+            // splitContainer3
+            // 
+            splitContainer3.Location = new Point(11, 24);
+            splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(checkBox_Id);
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(textBox_Id);
+            splitContainer3.Size = new Size(300, 52);
+            splitContainer3.SplitterDistance = 74;
+            splitContainer3.TabIndex = 16;
+            // 
+            // checkBox_Id
+            // 
+            checkBox_Id.AutoSize = true;
+            checkBox_Id.Location = new Point(3, 15);
+            checkBox_Id.Name = "checkBox_Id";
+            checkBox_Id.Size = new Size(44, 24);
+            checkBox_Id.TabIndex = 1;
+            checkBox_Id.Text = "Id";
+            checkBox_Id.UseVisualStyleBackColor = true;
+            // 
+            // textBox_Id
+            // 
+            textBox_Id.Location = new Point(15, 15);
+            textBox_Id.Name = "textBox_Id";
+            textBox_Id.Size = new Size(198, 27);
+            textBox_Id.TabIndex = 0;
             // 
             // Filtration
             // 
@@ -490,6 +531,12 @@
             splitContainer7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown_Water).EndInit();
             panel1.ResumeLayout(false);
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel1.PerformLayout();
+            splitContainer3.Panel2.ResumeLayout(false);
+            splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -526,5 +573,8 @@
         private CheckBox checkBox_Water;
         private NumericUpDown numericUpDown_Water;
         private Panel panel1;
+        private SplitContainer splitContainer3;
+        private CheckBox checkBox_Id;
+        private TextBox textBox_Id;
     }
 }

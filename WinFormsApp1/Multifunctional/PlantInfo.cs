@@ -19,18 +19,64 @@ namespace UI.Multifunctional
         {
             if (MyApplication.UserMode == MyApplication.Mode.User)
             {
-
-                this.btnSave.Visible = false;
-                this.btnCancel.Visible = false;
+                SetControlsForUser();
             }
             else
             {
-
-                this.btnSave.Visible = true;
-                this.btnCancel.Visible = true;
+                SetControlsForAdmin();
             }
 
+            LoadPlantInfo();
+        }
 
+        private void SetControlsForUser()
+        {
+            this.btnSave.Visible = false;
+            this.btnCancel.Visible = false;
+            
+            this.textBox_name.ReadOnly = true;
+            this.textBox_species.ReadOnly = true;
+            this.textBox_desciption.ReadOnly = true;
+            this.comboBox1_Level.Enabled = false;
+            this.numericUpDown_Water.Enabled = false;
+            this.comboBox_location.Enabled = false;
+
+            if (this.textBox_color.Visible)
+            {
+                this.textBox_color.ReadOnly = true;
+            }
+
+            if (this.comboBox1_size.Visible)
+            {
+                this.comboBox1_size.Enabled = false;
+            }
+        }
+
+        private void SetControlsForAdmin()
+        {
+            this.btnSave.Visible = true;
+            this.btnCancel.Visible = true;
+
+            this.textBox_name.ReadOnly = false;
+            this.textBox_species.ReadOnly = false;
+            this.textBox_desciption.ReadOnly = false;
+            this.comboBox1_Level.Enabled = true;
+            this.numericUpDown_Water.Enabled = true;
+            this.comboBox_location.Enabled = true;
+
+            if (this.textBox_color.Visible)
+            {
+                this.textBox_color.ReadOnly = false;
+            }
+
+            if (this.comboBox1_size.Visible)
+            {
+                this.comboBox1_size.Enabled = true;
+            }
+        }
+
+        private void LoadPlantInfo()
+        {
             this.Input_type.Text = plant.Type;
             this.textBox_name.Text = plant.Name;
             this.textBox_species.Text = plant.Species;

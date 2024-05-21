@@ -77,6 +77,7 @@
             LearnMore_Label.Size = new Size(150, 29);
             LearnMore_Label.TabIndex = 38;
             LearnMore_Label.Text = "HomeGarden";
+            LearnMore_Label.Click += LearnMore_Label_Click;
             // 
             // panel2
             // 
@@ -132,6 +133,7 @@
             AllVegetables_Button.TabIndex = 36;
             AllVegetables_Button.Text = "All Plants";
             AllVegetables_Button.UseVisualStyleBackColor = false;
+            AllVegetables_Button.Click += AllVegetables_Button_Click;
             // 
             // pictureBox1
             // 

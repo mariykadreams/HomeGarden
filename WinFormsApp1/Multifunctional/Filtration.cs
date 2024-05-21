@@ -58,23 +58,45 @@ namespace UI.Multifunctional
         {
             var filteredList = new List<Plant>(SearchResultList);
 
+            if (checkBox_Id.Checked && !string.IsNullOrEmpty(textBox_Id.Text))
+            {
+                filteredList = PlantService.SearchPlantsById(filteredList, textBox_Id.Text);
+            }
+
             if (checkBox_Name.Checked && !string.IsNullOrEmpty(textBox_name.Text))
+            {
                 filteredList = PlantService.SearchPlantsByName(filteredList, textBox_name.Text);
+            }
 
             if (checkBox_Species.Checked && !string.IsNullOrEmpty(textBox_species.Text))
+            {
                 filteredList = PlantService.SearchPlantsBySpecies(filteredList, textBox_species.Text);
+            }
 
             if (checkBox_Location.Checked && !string.IsNullOrEmpty(comboBox_location.Text))
+            {
                 filteredList = PlantService.SearchPlantsByLocation(filteredList, comboBox_location.Text);
+            }
 
-            if (checkBox_Level.Checked && !string.IsNullOrEmpty(numericUpDown_Water.Text))
-                filteredList = PlantService.SearchPlantsByLevel(filteredList, numericUpDown_Water.Text);
+            if (checkBox_Level.Checked && !string.IsNullOrEmpty(comboBox1_Level.Text))
+            {
+                filteredList = PlantService.SearchPlantsByLevel(filteredList, comboBox1_Level.Text);
+            }
 
             if (checkBox_Size.Checked && !string.IsNullOrEmpty(comboBox1_size.Text))
+            {
                 filteredList = PlantService.SearchPlantsBySize(filteredList, comboBox1_size.Text);
+            }
 
             if (checkBox_Color.Checked && !string.IsNullOrEmpty(textBox_color.Text))
+            {
                 filteredList = PlantService.SearchPlantsByColor(filteredList, textBox_color.Text);
+            }
+
+            if (checkBox_Water.Checked && numericUpDown_Water.Value > 0)
+            {
+                filteredList = PlantService.SearchPlantsByWateringFrequency(filteredList, (int)numericUpDown_Water.Value);
+            }
 
             MessageBox.Show($"Found {filteredList.Count} plants");
 
@@ -85,6 +107,6 @@ namespace UI.Multifunctional
             this.Hide();
         }
 
-        
+
     }
 }

@@ -9,11 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.AdminPages;
 
 namespace UI.UserPages
 {
     public partial class UserMainPage : Form
     {
+        Thread th;
+
         public UserMainPage()
         {
             InitializeComponent();
@@ -76,5 +79,21 @@ namespace UI.UserPages
             return text;
         }
 
+        private void LearnMore_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AllVegetables_Button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(OpenUserAllVegetable);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void OpenUserAllVegetable(object obj)
+        {
+            Application.Run(new UserAllVegetable());
+        }
     }
 }

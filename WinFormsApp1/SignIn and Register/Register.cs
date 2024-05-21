@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using HomeGarden.Core_Aplication;
 using HomeGarden.Models;
 
-
 namespace UI1
 {
     public partial class Register : Form
@@ -54,6 +53,12 @@ namespace UI1
                 return;
             }
 
+            if (!IsValidPassword(txtpassword.Text))
+            {
+                MessageBox.Show("Password must be 8-15 characters long and contain at least one uppercase letter!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (txtpassword.Text != txtpasswordVerification.Text)
             {
                 MessageBox.Show("Passwords do not match!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +84,6 @@ namespace UI1
             }
         }
 
-
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -87,7 +91,6 @@ namespace UI1
 
             try
             {
-                // Перевірка відповідності формату електронної пошти за допомогою регулярного виразу
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
             }
@@ -95,6 +98,17 @@ namespace UI1
             {
                 return false;
             }
+        }
+
+        private bool IsValidPassword(string password)
+        {
+            if (password.Length < 8 || password.Length > 15)
+                return false;
+
+            if (!password.Any(char.IsUpper))
+                return false;
+
+            return true;
         }
 
         private void Register_Load(object sender, EventArgs e)
