@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static HomeGarden.Core_Aplication.MyApplication;
+using HomeGarden.Plants;
 
 namespace HomeGarden.Models
 {
@@ -13,12 +13,15 @@ namespace HomeGarden.Models
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime JoinDate { get; set; } //UTC time
+        public DateTime JoinDate { get; set; } // UTC time
+
+        public List<Plant> MyPlants { get; set; } 
 
         public User()
         {
             Id = Guid.NewGuid();
-            JoinDate = DateTime.UtcNow; 
+            JoinDate = DateTime.UtcNow;
+            MyPlants = new List<Plant>();
         }
 
         public User(string fullName, string email, string password)
@@ -28,6 +31,7 @@ namespace HomeGarden.Models
             Email = email;
             Password = password;
             JoinDate = DateTime.UtcNow;
+            MyPlants = new List<Plant>(); 
         }
     }
 }

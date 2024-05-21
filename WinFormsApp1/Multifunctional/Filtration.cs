@@ -107,6 +107,17 @@ namespace UI.Multifunctional
             this.Hide();
         }
 
+        private void Filtration_Load(object sender, EventArgs e)
+        {
+            if (MyApplication.UserMode == MyApplication.Mode.User)
+            {
+                splitContainer3.Visible = false;
+            }
+            else
+            {
+                splitContainer3.Visible = true;
+            }
+        }
 
     }
 }

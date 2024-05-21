@@ -21,16 +21,28 @@ namespace UI.UserPages
         {
             InitializeComponent();
             UpdateWelcomeMessage();
+            MyPlantsUpdate();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Sign Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Sign Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            };
         }
 
         private void Welcome_label_Click(object sender, EventArgs e)
@@ -41,6 +53,35 @@ namespace UI.UserPages
         private void UserMainPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MyPlantsUpdate()
+        {
+            if (MyApplication.NowUser.MyPlants.Count == 0)
+            {
+                this.dataGridView1.Visible = false;
+                this.Lebel_above_DataGrid.Visible = true;
+            }
+            else
+            {
+                this.Lebel_above_DataGrid.Visible = false;
+                this.dataGridView1.Visible = true;
+                this.dataGridView1.DataSource = MyApplication.NowUser.MyPlants;
+                this.dataGridView1.Columns[1].HeaderText = "Type";
+                this.dataGridView1.Columns[2].HeaderText = "Name";
+                this.dataGridView1.Columns[3].HeaderText = "Species";
+                this.dataGridView1.Columns[4].HeaderText = "Location";
+                this.dataGridView1.Columns[5].HeaderText = "Status";
+                this.dataGridView1.Columns[6].HeaderText = "Short Description";
+                this.dataGridView1.Columns[7].HeaderText = "Level";
+                this.dataGridView1.Columns[8].HeaderText = "Water";
+
+                for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
+                {
+                    this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
+                }
+            }
+            dataGridView1.ClearSelection();
         }
 
         private void UpdateWelcomeMessage()

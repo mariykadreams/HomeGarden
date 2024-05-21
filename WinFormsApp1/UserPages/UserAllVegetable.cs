@@ -22,51 +22,55 @@ namespace UI.UserPages
             PlantService.LoadPlantsFromXml();
             PlantsDataGridView(PlantService.Plants);
         }
+
         private void PlantsDataGridView(List<Plant> plants)
         {
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = plants;
 
-            this.dataGridView1.Columns[0].HeaderText = "Guid Id";
-            this.dataGridView1.Columns[1].HeaderText = "Type";
-            this.dataGridView1.Columns[2].HeaderText = "Name";
-            this.dataGridView1.Columns[3].HeaderText = "Species";
-            this.dataGridView1.Columns[4].HeaderText = "Location";
-            this.dataGridView1.Columns[5].HeaderText = "Status";
-            this.dataGridView1.Columns[6].HeaderText = "Short Description";
-            this.dataGridView1.Columns[7].HeaderText = "Level";
-            this.dataGridView1.Columns[8].HeaderText = "Water";
+            this.dataGridView1.Columns["Id"].Visible = false;
 
-            for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
+            this.dataGridView1.Columns["Type"].HeaderText = "Type";
+            this.dataGridView1.Columns["Name"].HeaderText = "Name";
+            this.dataGridView1.Columns["Species"].HeaderText = "Species";
+            this.dataGridView1.Columns["Location"].HeaderText = "Location";
+            this.dataGridView1.Columns["Status"].HeaderText = "Status";
+            this.dataGridView1.Columns["ShortDesciption"].HeaderText = "Short Description";
+            this.dataGridView1.Columns["Level"].HeaderText = "Level";
+            this.dataGridView1.Columns["WateringFrequency"].HeaderText = "Water";
+
+            for (int i = 1; i < this.dataGridView1.Columns.Count; i++)
             {
                 this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
             }
+
             this.dataGridView1.ClearSelection();
         }
 
+
         private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            switch (e.ColumnIndex)
+            switch (this.dataGridView1.Columns[e.ColumnIndex].Name)
             {
-                case 1:
+                case "Type":
                     PlantService.SortPlantsByType();
                     break;
-                case 2:
+                case "Name":
                     PlantService.SortPlantsByName();
                     break;
-                case 3:
+                case "Species":
                     PlantService.SortPlantsBySpecies();
                     break;
-                case 4:
+                case "Location":
                     PlantService.SortPlantsByLocation();
                     break;
-                case 5:
+                case "Status":
                     PlantService.SortPlantsByStatus();
                     break;
-                case 7:
+                case "Level":
                     PlantService.SortPlantsByLevel();
                     break;
-                case 8:
+                case "Water":
                     PlantService.SortPlantsByWateringFrequency();
                     break;
                 default:
@@ -74,6 +78,7 @@ namespace UI.UserPages
             }
             PlantsDataGridView(PlantService.Plants);
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -83,12 +88,23 @@ namespace UI.UserPages
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Sign Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to sign out?", "Sign Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            };
         }
 
         private void Home_Button_Click(object sender, EventArgs e)
@@ -156,6 +172,11 @@ namespace UI.UserPages
 
                 filtration.Close();
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

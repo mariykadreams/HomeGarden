@@ -67,6 +67,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 612);
             panel2.TabIndex = 7;
+            panel2.Paint += panel2_Paint;
             // 
             // Home_Button
             // 
@@ -258,8 +259,8 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(899, 612);
             dataGridView1.TabIndex = 11;
-            dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick;
             // 
             // UserAllVegetable
             // 

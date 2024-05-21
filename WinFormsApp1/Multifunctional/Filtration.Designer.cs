@@ -394,7 +394,7 @@
             // 
             // splitContainer7
             // 
-            splitContainer7.Location = new Point(347, 24);
+            splitContainer7.Location = new Point(349, 140);
             splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -491,6 +491,7 @@
             Controls.Add(Type_Label);
             Name = "Filtration";
             Text = "Form1";
+            Load += Filtration_Load;
             splitContainer.Panel1.ResumeLayout(false);
             splitContainer.Panel1.PerformLayout();
             splitContainer.Panel2.ResumeLayout(false);

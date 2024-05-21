@@ -39,10 +39,17 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             Welcome_label = new Label();
+            panel4 = new Panel();
+            Add_Button = new Button();
+            View_Button = new Button();
+            dataGridView1 = new DataGridView();
+            Lebel_above_DataGrid = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -61,7 +68,7 @@
             allUsers_Label.AutoSize = true;
             allUsers_Label.Font = new Font("Elephant", 11.999999F);
             allUsers_Label.ForeColor = Color.White;
-            allUsers_Label.Location = new Point(633, 7);
+            allUsers_Label.Location = new Point(696, 4);
             allUsers_Label.Name = "allUsers_Label";
             allUsers_Label.Size = new Size(73, 26);
             allUsers_Label.TabIndex = 40;
@@ -170,11 +177,77 @@
             Welcome_label.Text = "Welcome, User!      ";
             Welcome_label.Click += Welcome_label_Click;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(Add_Button);
+            panel4.Controls.Add(View_Button);
+            panel4.Dock = DockStyle.Bottom;
+            panel4.Location = new Point(250, 522);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(899, 126);
+            panel4.TabIndex = 14;
+            // 
+            // Add_Button
+            // 
+            Add_Button.BackColor = Color.White;
+            Add_Button.Location = new Point(377, 69);
+            Add_Button.Name = "Add_Button";
+            Add_Button.Size = new Size(94, 29);
+            Add_Button.TabIndex = 5;
+            Add_Button.Text = "Add";
+            Add_Button.UseVisualStyleBackColor = false;
+            // 
+            // View_Button
+            // 
+            View_Button.BackColor = Color.White;
+            View_Button.Enabled = false;
+            View_Button.Location = new Point(511, 69);
+            View_Button.Name = "View_Button";
+            View_Button.Size = new Size(94, 29);
+            View_Button.TabIndex = 7;
+            View_Button.Text = "View";
+            View_Button.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.GridColor = Color.FromArgb(44, 110, 73);
+            dataGridView1.Location = new Point(250, 36);
+            dataGridView1.Margin = new Padding(1);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 102;
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView1.ScrollBars = ScrollBars.Vertical;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(899, 612);
+            dataGridView1.TabIndex = 13;
+            // 
+            // Lebel_above_DataGrid
+            // 
+            Lebel_above_DataGrid.AutoSize = true;
+            Lebel_above_DataGrid.Font = new Font("Elephant", 11.999999F);
+            Lebel_above_DataGrid.Location = new Point(537, 264);
+            Lebel_above_DataGrid.Name = "Lebel_above_DataGrid";
+            Lebel_above_DataGrid.Size = new Size(356, 26);
+            Lebel_above_DataGrid.TabIndex = 39;
+            Lebel_above_DataGrid.Text = "You don`t have your own plants yet\r\n";
+            // 
             // UserMainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 648);
+            Controls.Add(Lebel_above_DataGrid);
+            Controls.Add(panel4);
+            Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "UserMainPage";
@@ -186,7 +259,10 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -201,5 +277,10 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label Welcome_label;
+        private Label Lebel_above_DataGrid;
+        private Panel panel4;
+        private Button Add_Button;
+        private Button View_Button;
+        private DataGridView dataGridView1;
     }
 }
