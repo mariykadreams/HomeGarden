@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeGarden.Plants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,30 @@ namespace HomeGarden.Models
         {
             return Users.FirstOrDefault(u => u.Email == email);
         }
+
+        public static void AddPlantToUser(User user, Plant plant)
+        {
+            user.MyPlants.Add(plant);
+            SaveUsersToXml();
+        }
+
+        public static void DeletePlantFromUser(User user, Plant plant)
+        {
+            if (user != null && plant != null && user.MyPlants.Contains(plant))
+            {
+                user.MyPlants.Remove(plant);
+                SaveUsersToXml();
+            }
+            else
+            {
+                Console.WriteLine("Error: User or plant is null, or the plant is not found in the user's list.");
+            }
+        }
+
+
+
+
+
 
 
     }

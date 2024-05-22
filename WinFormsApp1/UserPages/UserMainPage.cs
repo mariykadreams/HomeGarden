@@ -1,5 +1,6 @@
 ﻿using HomeGarden.Core_Aplication;
 using HomeGarden.Models;
+using HomeGarden.Plants;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace UI.UserPages
             {
                 Application.Exit();
             }
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace UI.UserPages
 
         private void MyPlantsUpdate()
         {
+            // Hide DataGridView if no plants
             if (MyApplication.NowUser.MyPlants.Count == 0)
             {
                 this.dataGridView1.Visible = false;
@@ -66,7 +68,15 @@ namespace UI.UserPages
             {
                 this.Lebel_above_DataGrid.Visible = false;
                 this.dataGridView1.Visible = true;
+
+                // Clear current DataSource before updating
+                this.dataGridView1.DataSource = null;
+
+                // Set the new DataSource
                 this.dataGridView1.DataSource = MyApplication.NowUser.MyPlants;
+
+                // Set column headers
+                this.dataGridView1.Columns["Id"].Visible = false;
                 this.dataGridView1.Columns[1].HeaderText = "Type";
                 this.dataGridView1.Columns[2].HeaderText = "Name";
                 this.dataGridView1.Columns[3].HeaderText = "Species";
@@ -76,13 +86,16 @@ namespace UI.UserPages
                 this.dataGridView1.Columns[7].HeaderText = "Level";
                 this.dataGridView1.Columns[8].HeaderText = "Water";
 
+                // Adjust column widths
                 for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
                 {
                     this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
                 }
             }
+            // Clear selection to prevent issues with deleted rows
             dataGridView1.ClearSelection();
         }
+
 
         private void UpdateWelcomeMessage()
         {
@@ -136,5 +149,25 @@ namespace UI.UserPages
         {
             Application.Run(new UserAllVegetable());
         }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the selected plant from DataGridView
+                Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
+
+                if (selectedPlant != null)
+                {
+                    // Remove the plant from the user's plant list
+                    UserService.DeletePlantFromUser(MyApplication.NowUser, selectedPlant);
+
+                    // Update the DataGridView after deletion
+                    MyPlantsUpdate();
+                }
+            }
+        }
+
+
     }
 }

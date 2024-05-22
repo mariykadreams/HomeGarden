@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Multifunctional;
+using HomeGarden.Core_Aplication;
+using HomeGarden.Models;
 
 namespace UI.UserPages
 {
@@ -22,6 +24,8 @@ namespace UI.UserPages
             PlantService.LoadPlantsFromXml();
             PlantsDataGridView(PlantService.Plants);
         }
+
+
 
         private void PlantsDataGridView(List<Plant> plants)
         {
@@ -119,10 +123,35 @@ namespace UI.UserPages
             Application.Run(new UserMainPage());
         }
 
+
+
         private void Add_Button_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
 
+                if (selectedPlant != null)
+                {
+                    User currentUser = MyApplication.NowUser;
+
+                    if (currentUser != null)
+                    {
+                        UserService.AddPlantToUser(currentUser, selectedPlant);
+                        MessageBox.Show("Plant added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Current user not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
+
+
+
+
+
 
         private void View_Button_Click(object sender, EventArgs e)
         {
