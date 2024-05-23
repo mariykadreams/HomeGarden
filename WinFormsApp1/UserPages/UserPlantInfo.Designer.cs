@@ -1,6 +1,6 @@
 ﻿namespace UI.UserPages
 {
-    partial class View
+    partial class UserPlantInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label11 = new Label();
+            time_whenWaterr = new Label();
+            label10 = new Label();
+            checkBox1 = new CheckBox();
             panel1 = new Panel();
             splitContainer8 = new SplitContainer();
             label9 = new Label();
@@ -96,6 +100,44 @@
             splitContainer.SuspendLayout();
             SuspendLayout();
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Elephant", 11.999999F);
+            label11.Location = new Point(400, 85);
+            label11.Name = "label11";
+            label11.Size = new Size(248, 26);
+            label11.TabIndex = 34;
+            label11.Text = "Learn more about plant";
+            // 
+            // time_whenWaterr
+            // 
+            time_whenWaterr.AutoSize = true;
+            time_whenWaterr.Location = new Point(691, 526);
+            time_whenWaterr.Name = "time_whenWaterr";
+            time_whenWaterr.Size = new Size(82, 20);
+            time_whenWaterr.TabIndex = 33;
+            time_whenWaterr.Text = "time_water";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(515, 526);
+            label10.Name = "label10";
+            label10.Size = new Size(136, 20);
+            label10.TabIndex = 32;
+            label10.Text = "Next time to water:";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(198, 525);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(202, 24);
+            checkBox1.TabIndex = 31;
+            checkBox1.Text = "Did you water your plant?";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             panel1.Controls.Add(splitContainer8);
@@ -107,10 +149,10 @@
             panel1.Controls.Add(splitContainer4);
             panel1.Controls.Add(splitContainer1);
             panel1.Controls.Add(splitContainer);
-            panel1.Location = new Point(70, 98);
+            panel1.Location = new Point(182, 140);
             panel1.Name = "panel1";
             panel1.Size = new Size(672, 361);
-            panel1.TabIndex = 23;
+            panel1.TabIndex = 30;
             // 
             // splitContainer8
             // 
@@ -422,15 +464,19 @@
             textBox_name.Size = new Size(198, 27);
             textBox_name.TabIndex = 0;
             // 
-            // View
+            // UserPlantInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1036, 635);
             Controls.Add(panel1);
-            Name = "View";
-            Text = "Lear More";
-            Load += Form1_Load;
+            Controls.Add(label11);
+            Controls.Add(time_whenWaterr);
+            Controls.Add(label10);
+            Controls.Add(checkBox1);
+            Name = "UserPlantInfo";
+            Text = "UserPlantInfo";
+            Load += PlantInfo_Load;
             panel1.ResumeLayout(false);
             splitContainer8.Panel1.ResumeLayout(false);
             splitContainer8.Panel1.PerformLayout();
@@ -484,10 +530,15 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
             splitContainer.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
+        private Label label11;
+        private Label time_whenWaterr;
+        private Label label10;
+        private CheckBox checkBox1;
         private Panel panel1;
         private SplitContainer splitContainer8;
         private Label label9;

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace HomeGarden.Models
 {
     public class UserPlantInfo
     {
         public Plant Plant { get; set; }
+
         public DateTime LastWatered { get; set; }
 
         public UserPlantInfo()
@@ -23,7 +23,7 @@ namespace HomeGarden.Models
             Plant = plant;
             LastWatered = DateTime.MinValue;
         }
-    }
 
+    }
 }
 

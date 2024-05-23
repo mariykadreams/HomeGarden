@@ -123,8 +123,6 @@ namespace UI.UserPages
             Application.Run(new UserMainPage());
         }
 
-
-
         private void Add_Button_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -133,12 +131,15 @@ namespace UI.UserPages
 
                 if (selectedPlant != null)
                 {
-                    var userPlantInfo = new UserPlantInfo(selectedPlant);
+                    // Создаем новый объект UserPlantInfo
+                    var userPlantInfo = new HomeGarden.Models.UserPlantInfo(selectedPlant); // Use the fully qualified name
 
+                    // Получаем текущего пользователя
                     User currentUser = MyApplication.NowUser;
 
                     if (currentUser != null)
                     {
+                        // Добавляем растение к пользователю
                         UserService.AddPlantToUser(currentUser, userPlantInfo);
                         MessageBox.Show("Plant added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -149,7 +150,6 @@ namespace UI.UserPages
                 }
             }
         }
-
 
         private void View_Button_Click(object sender, EventArgs e)
         {

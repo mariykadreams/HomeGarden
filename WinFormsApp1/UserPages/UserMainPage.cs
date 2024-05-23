@@ -177,7 +177,7 @@ namespace UI.UserPages
 
                 if (selectedPlant != null)
                 {
-                    var plantInfo = new PlantInfo(selectedPlant);
+                    var plantInfo = new UserPlantInfo(selectedPlant);
                     plantInfo.FormClosed += PlantInfo_FormClosed;
                     plantInfo.ShowDialog();
                 }

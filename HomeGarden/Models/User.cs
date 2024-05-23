@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using HomeGarden.Plants;
 
 namespace HomeGarden.Models
@@ -15,7 +14,7 @@ namespace HomeGarden.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime JoinDate { get; set; } // UTC time
-        [XmlElement("MyPlants")]
+
         public List<Plant> MyPlants { get; set; } 
 
         public User()

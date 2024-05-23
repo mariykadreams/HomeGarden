@@ -55,19 +55,11 @@ namespace HomeGarden.Models
 
         public static void AddPlantToUser(User user, UserPlantInfo userPlantInfo)
         {
-            // Создаем новый объект типа Plant на основе информации из UserPlantInfo
             Plant plant = userPlantInfo.Plant;
-
-            // Устанавливаем значение LastWatered в DateTime.MinValue
-            userPlantInfo.LastWatered = DateTime.MinValue;
-
-            // Добавляем растение к списку растений пользователя
+            userPlantInfo.LastWatered = DateTime.Now; 
             user.MyPlants.Add(plant);
-
-            // Сохраняем изменения
             SaveUsersToXml();
         }
-
 
 
 

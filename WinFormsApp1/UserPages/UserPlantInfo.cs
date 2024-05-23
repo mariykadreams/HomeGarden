@@ -1,19 +1,25 @@
-﻿using HomeGarden.Plants;
+﻿using HomeGarden.Core_Aplication;
+using HomeGarden.Models;
+using HomeGarden.Plants;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using HomeGarden.Core_Aplication;
-using HomeGarden.Models;
 
-namespace UI.Multifunctional
+namespace UI.UserPages
 {
-    public partial class PlantInfo : Form
+    public partial class UserPlantInfo : Form
     {
         private Plant plant;
         private bool hideWateringControls;
         private Dictionary<string, UserPlantPreferences> userPreferences;
 
-        public PlantInfo(Plant plant, bool hideWateringControls = false)
+        public UserPlantInfo(Plant plant, bool hideWateringControls = false)
         {
             InitializeComponent();
             this.plant = plant;
@@ -27,10 +33,7 @@ namespace UI.Multifunctional
             {
                 SetControlsForUser();
             }
-            else
-            {
-                SetControlsForAdmin();
-            }
+           
 
             if (hideWateringControls)
             {
@@ -45,9 +48,7 @@ namespace UI.Multifunctional
 
         private void SetControlsForUser()
         {
-            this.btnSave.Visible = false;
-            this.btnCancel.Visible = false;
-
+           
             this.checkBox1.Visible = true;
             this.label10.Visible = true;
             this.time_whenWaterr.Visible = true;
@@ -70,31 +71,7 @@ namespace UI.Multifunctional
             }
         }
 
-        private void SetControlsForAdmin()
-        {
-            this.btnSave.Visible = true;
-            this.btnCancel.Visible = true;
-            this.checkBox1.Visible = false;
-            this.label10.Visible = false;
-            this.time_whenWaterr.Visible = false;
-
-            this.textBox_name.ReadOnly = false;
-            this.textBox_species.ReadOnly = false;
-            this.textBox_desciption.ReadOnly = false;
-            this.comboBox1_Level.Enabled = true;
-            this.numericUpDown_Water.Enabled = true;
-            this.comboBox_location.Enabled = true;
-
-            if (this.textBox_color.Visible)
-            {
-                this.textBox_color.ReadOnly = false;
-            }
-
-            if (this.comboBox1_size.Visible)
-            {
-                this.comboBox1_size.Enabled = true;
-            }
-        }
+       
 
         private void LoadPlantInfo()
         {
@@ -178,10 +155,21 @@ namespace UI.Multifunctional
 
         }
 
+        private void SaveUserPreferences()
+        {
+            userPreferences[plant.Id.ToString()] = new UserPlantPreferences
+            {
+                PlantId = plant.Id.ToString(),
+                IsWateringChecked = checkBox1.Checked
+            };
+
+            UserWateringService.SavePreferences(userPreferences);
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             UpdateWateringTime();
+            SaveUserPreferences();
         }
 
         private void UpdateWateringTime()
@@ -198,3 +186,4 @@ namespace UI.Multifunctional
         }
     }
 }
+
