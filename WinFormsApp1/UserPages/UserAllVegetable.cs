@@ -41,7 +41,7 @@ namespace UI.UserPages
             this.dataGridView1.Columns["Status"].HeaderText = "Status";
             this.dataGridView1.Columns["ShortDesciption"].HeaderText = "Short Description";
             this.dataGridView1.Columns["Level"].HeaderText = "Level";
-            this.dataGridView1.Columns["WateringFrequency"].HeaderText = "Water";
+            this.dataGridView1.Columns["WateringFrequency"].HeaderText = "WateringFrequency";
 
             for (int i = 1; i < this.dataGridView1.Columns.Count; i++)
             {
@@ -74,7 +74,7 @@ namespace UI.UserPages
                 case "Level":
                     PlantService.SortPlantsByLevel();
                     break;
-                case "Water":
+                case "WateringFrequency":
                     PlantService.SortPlantsByWateringFrequency();
                     break;
                 default:
@@ -148,21 +148,15 @@ namespace UI.UserPages
             }
         }
 
-
-
-
-
-
         private void View_Button_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
 
                 if (selectedPlant != null)
                 {
-                    var plantInfo = new PlantInfo(selectedPlant);
+                    var plantInfo = new PlantInfo(selectedPlant, true);
                     plantInfo.FormClosed += PlantInfo_FormClosed;
                     plantInfo.ShowDialog();
                 }

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.AdminPages;
+using UI.Multifunctional;
 
 namespace UI.UserPages
 {
@@ -22,7 +23,7 @@ namespace UI.UserPages
         {
             InitializeComponent();
             UpdateWelcomeMessage();
-            MyPlantsUpdate();
+            MyPlantsUpdate(MyApplication.NowUser.MyPlants);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace UI.UserPages
 
         }
 
-        private void MyPlantsUpdate()
+        private void MyPlantsUpdate(List<Plant> plants)
         {
             // Hide DataGridView if no plants
             if (MyApplication.NowUser.MyPlants.Count == 0)
@@ -163,11 +164,30 @@ namespace UI.UserPages
                     UserService.DeletePlantFromUser(MyApplication.NowUser, selectedPlant);
 
                     // Update the DataGridView after deletion
-                    MyPlantsUpdate();
+                    MyPlantsUpdate(MyApplication.NowUser.MyPlants);
                 }
             }
         }
 
+        private void View_Button_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
+
+                if (selectedPlant != null)
+                {
+                    var plantInfo = new PlantInfo(selectedPlant);
+                    plantInfo.FormClosed += PlantInfo_FormClosed;
+                    plantInfo.ShowDialog();
+                }
+            }
+        }
+          private void PlantInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PlantService.LoadPlantsFromXml();
+            MyPlantsUpdate(MyApplication.NowUser.MyPlants);
+        }
 
     }
 }

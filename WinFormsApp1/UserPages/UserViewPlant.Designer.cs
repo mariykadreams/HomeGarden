@@ -1,6 +1,6 @@
-﻿namespace UI.Multifunctional
+﻿namespace UI.UserPages
 {
-    partial class PlantInfo
+    partial class View
     {
         /// <summary>
         /// Required designer variable.
@@ -56,12 +56,6 @@
             splitContainer = new SplitContainer();
             label1 = new Label();
             textBox_name = new TextBox();
-            btnSave = new Button();
-            btnCancel = new Button();
-            checkBox1 = new CheckBox();
-            label10 = new Label();
-            time_whenWaterr = new Label();
-            label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
             splitContainer8.Panel1.SuspendLayout();
@@ -113,10 +107,10 @@
             panel1.Controls.Add(splitContainer4);
             panel1.Controls.Add(splitContainer1);
             panel1.Controls.Add(splitContainer);
-            panel1.Location = new Point(39, 99);
+            panel1.Location = new Point(70, 98);
             panel1.Name = "panel1";
             panel1.Size = new Size(672, 361);
-            panel1.TabIndex = 22;
+            panel1.TabIndex = 23;
             // 
             // splitContainer8
             // 
@@ -428,80 +422,15 @@
             textBox_name.Size = new Size(198, 27);
             textBox_name.TabIndex = 0;
             // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(212, 564);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 29);
-            btnSave.TabIndex = 24;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(434, 564);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
-            btnCancel.TabIndex = 25;
-            btnCancel.Text = "Cencel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(55, 484);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(202, 24);
-            checkBox1.TabIndex = 26;
-            checkBox1.Text = "Did you water your plant?";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(372, 485);
-            label10.Name = "label10";
-            label10.Size = new Size(136, 20);
-            label10.TabIndex = 27;
-            label10.Text = "Next time to water:";
-            // 
-            // time_whenWaterr
-            // 
-            time_whenWaterr.AutoSize = true;
-            time_whenWaterr.Location = new Point(548, 485);
-            time_whenWaterr.Name = "time_whenWaterr";
-            time_whenWaterr.Size = new Size(82, 20);
-            time_whenWaterr.TabIndex = 28;
-            time_whenWaterr.Text = "time_water";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Elephant", 11.999999F);
-            label11.Location = new Point(257, 44);
-            label11.Name = "label11";
-            label11.Size = new Size(248, 26);
-            label11.TabIndex = 29;
-            label11.Text = "Learn more about plant";
-            // 
-            // PlantInfo
+            // View
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(796, 629);
-            Controls.Add(label11);
-            Controls.Add(time_whenWaterr);
-            Controls.Add(label10);
-            Controls.Add(checkBox1);
-            Controls.Add(btnCancel);
-            Controls.Add(btnSave);
+            ClientSize = new Size(800, 450);
             Controls.Add(panel1);
-            Name = "PlantInfo";
-            Text = "PlantInfo";
-            Load += PlantInfo_Load;
+            Name = "View";
+            Text = "Lear More";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             splitContainer8.Panel1.ResumeLayout(false);
             splitContainer8.Panel1.PerformLayout();
@@ -555,13 +484,14 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
             splitContainer.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
+
         private Panel panel1;
         private SplitContainer splitContainer8;
         private Label label9;
+        private Label Input_type;
         private SplitContainer splitContainer7;
         private Label label8;
         private NumericUpDown numericUpDown_Water;
@@ -586,12 +516,5 @@
         private SplitContainer splitContainer;
         private Label label1;
         private TextBox textBox_name;
-        private Label Input_type;
-        private Button btnSave;
-        private Button btnCancel;
-        private CheckBox checkBox1;
-        private Label label10;
-        private Label time_whenWaterr;
-        private Label label11;
     }
 }

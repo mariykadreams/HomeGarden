@@ -8,11 +8,13 @@ namespace UI.Multifunctional
     public partial class PlantInfo : Form
     {
         private Plant plant;
+        private bool hideWateringControls;
 
-        public PlantInfo(Plant plant)
+        public PlantInfo(Plant plant, bool hideWateringControls = false)
         {
             InitializeComponent();
             this.plant = plant;
+            this.hideWateringControls = hideWateringControls;
         }
 
         private void PlantInfo_Load(object sender, EventArgs e)
@@ -26,14 +28,26 @@ namespace UI.Multifunctional
                 SetControlsForAdmin();
             }
 
+            if (hideWateringControls)
+            {
+                this.checkBox1.Visible = false;
+                this.label10.Visible = false;
+                this.time_whenWaterr.Visible = false;
+            }
+
             LoadPlantInfo();
+            UpdateWateringTime();
         }
 
         private void SetControlsForUser()
         {
             this.btnSave.Visible = false;
             this.btnCancel.Visible = false;
-            
+
+            this.checkBox1.Visible = true;
+            this.label10.Visible = true;
+            this.time_whenWaterr.Visible = true;
+
             this.textBox_name.ReadOnly = true;
             this.textBox_species.ReadOnly = true;
             this.textBox_desciption.ReadOnly = true;
@@ -56,6 +70,9 @@ namespace UI.Multifunctional
         {
             this.btnSave.Visible = true;
             this.btnCancel.Visible = true;
+            this.checkBox1.Visible = false;
+            this.label10.Visible = false;
+            this.time_whenWaterr.Visible = false;
 
             this.textBox_name.ReadOnly = false;
             this.textBox_species.ReadOnly = false;
@@ -139,6 +156,44 @@ namespace UI.Multifunctional
                "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void time_whenWaterr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateWateringTime();
+
+        }
+        private void UpdateWateringTime()
+        {
+            if (checkBox1.Checked)
+            {
+                // Время полива
+                // Например, установим время на 10:00
+                DateTime wateringTime = DateTime.Today.AddHours(10);
+
+                // Отобразим время полива в текстовом поле
+                time_whenWaterr.Text = wateringTime.ToString("HH:mm");
+            }
+            else
+            {
+                // Если флажок не отмечен, показываем текущее время
+                time_whenWaterr.Text = "You need to water now!";
             }
         }
     }

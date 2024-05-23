@@ -157,7 +157,7 @@
             // 
             Type_Label.AutoSize = true;
             Type_Label.Font = new Font("Elephant", 11.999999F);
-            Type_Label.Location = new Point(322, 66);
+            Type_Label.Location = new Point(297, 50);
             Type_Label.Name = "Type_Label";
             Type_Label.Size = new Size(147, 26);
             Type_Label.TabIndex = 8;

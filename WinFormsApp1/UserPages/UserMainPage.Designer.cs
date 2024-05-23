@@ -40,10 +40,10 @@
             label1 = new Label();
             Welcome_label = new Label();
             panel4 = new Panel();
+            button_Delete = new Button();
             View_Button = new Button();
             dataGridView1 = new DataGridView();
             Lebel_above_DataGrid = new Label();
-            button_Delete = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -187,16 +187,26 @@
             panel4.Size = new Size(899, 126);
             panel4.TabIndex = 14;
             // 
+            // button_Delete
+            // 
+            button_Delete.Location = new Point(483, 69);
+            button_Delete.Name = "button_Delete";
+            button_Delete.Size = new Size(94, 29);
+            button_Delete.TabIndex = 8;
+            button_Delete.Text = "Delete";
+            button_Delete.UseVisualStyleBackColor = true;
+            button_Delete.Click += button_Delete_Click;
+            // 
             // View_Button
             // 
             View_Button.BackColor = Color.White;
-            View_Button.Enabled = false;
             View_Button.Location = new Point(360, 71);
             View_Button.Name = "View_Button";
             View_Button.Size = new Size(94, 29);
             View_Button.TabIndex = 7;
             View_Button.Text = "View";
             View_Button.UseVisualStyleBackColor = false;
+            View_Button.Click += View_Button_Click;
             // 
             // dataGridView1
             // 
@@ -229,16 +239,6 @@
             Lebel_above_DataGrid.Size = new Size(356, 26);
             Lebel_above_DataGrid.TabIndex = 39;
             Lebel_above_DataGrid.Text = "You don`t have your own plants yet\r\n";
-            // 
-            // button_Delete
-            // 
-            button_Delete.Location = new Point(483, 69);
-            button_Delete.Name = "button_Delete";
-            button_Delete.Size = new Size(94, 29);
-            button_Delete.TabIndex = 8;
-            button_Delete.Text = "Delete";
-            button_Delete.UseVisualStyleBackColor = true;
-            button_Delete.Click += button_Delete_Click;
             // 
             // UserMainPage
             // 
