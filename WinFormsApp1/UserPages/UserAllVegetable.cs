@@ -133,11 +133,13 @@ namespace UI.UserPages
 
                 if (selectedPlant != null)
                 {
+                    var userPlantInfo = new UserPlantInfo(selectedPlant);
+
                     User currentUser = MyApplication.NowUser;
 
                     if (currentUser != null)
                     {
-                        UserService.AddPlantToUser(currentUser, selectedPlant);
+                        UserService.AddPlantToUser(currentUser, userPlantInfo);
                         MessageBox.Show("Plant added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -147,6 +149,7 @@ namespace UI.UserPages
                 }
             }
         }
+
 
         private void View_Button_Click(object sender, EventArgs e)
         {

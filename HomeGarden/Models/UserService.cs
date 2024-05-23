@@ -53,11 +53,23 @@ namespace HomeGarden.Models
             return Users.FirstOrDefault(u => u.Email == email);
         }
 
-        public static void AddPlantToUser(User user, Plant plant)
+        public static void AddPlantToUser(User user, UserPlantInfo userPlantInfo)
         {
+            // Создаем новый объект типа Plant на основе информации из UserPlantInfo
+            Plant plant = userPlantInfo.Plant;
+
+            // Устанавливаем значение LastWatered в DateTime.MinValue
+            userPlantInfo.LastWatered = DateTime.MinValue;
+
+            // Добавляем растение к списку растений пользователя
             user.MyPlants.Add(plant);
+
+            // Сохраняем изменения
             SaveUsersToXml();
         }
+
+
+
 
         public static void DeletePlantFromUser(User user, Plant plant)
         {

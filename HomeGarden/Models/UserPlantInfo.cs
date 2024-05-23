@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace HomeGarden.Models
 {
@@ -23,5 +24,6 @@ namespace HomeGarden.Models
             LastWatered = DateTime.MinValue;
         }
     }
+
 }
 
