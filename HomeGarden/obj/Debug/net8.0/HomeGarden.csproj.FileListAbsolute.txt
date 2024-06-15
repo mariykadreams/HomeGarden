@@ -1,0 +1,24 @@
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.deps.json
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.csproj.AssemblyReference.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.AssemblyInfoInputs.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.AssemblyInfo.cs
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\refint\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\HomeGarden\obj\Debug\net8.0\ref\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.deps.json
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\bin\Debug\net8.0\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.csproj.AssemblyReference.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.AssemblyInfoInputs.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.AssemblyInfo.cs
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\refint\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\HomeGarden\obj\Debug\net8.0\ref\HomeGarden.dll

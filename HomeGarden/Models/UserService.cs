@@ -76,6 +76,42 @@ namespace HomeGarden.Models
             }
         }
 
+        #region sort
+        public static void SortPlantsByName(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Name).ToList();
+        }
+
+        public static void SortPlantsBySpecies(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Species).ToList();
+        }
+
+        public static void SortPlantsByLocation(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Location).ToList();
+        }
+
+        public static void SortPlantsByStatus(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Status).ToList();
+        }
+
+        public static void SortPlantsByLevel(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Level).ToList();
+        }
+
+        public static void SortPlantsByWateringFrequency(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.WateringFrequency).ToList();
+        }
+
+        public static void SortPlantsByType(User user)
+        {
+            user.MyPlants = user.MyPlants.OrderBy(plant => plant.Type).ToList();
+        }
+        #endregion
 
 
 

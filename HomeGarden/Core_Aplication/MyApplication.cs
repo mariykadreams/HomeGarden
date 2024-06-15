@@ -26,6 +26,7 @@ namespace HomeGarden.Core_Aplication
 
         public static User NowUser { get; set; }
         public static Mode UserMode { get; set; }
+        public static string CurrentUserId => NowUser?.Id.ToString();
 
     }
 }
