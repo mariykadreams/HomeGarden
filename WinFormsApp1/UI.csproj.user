@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AdminPages\AllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminPages\AllVegetables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminPages\MainAdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminPages\NewPlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Multifunctional\PlantInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignIn and Register\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignIn and Register\SignInUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserPages\UserAllVegetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserPages\UserMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserPages\UserPlantInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

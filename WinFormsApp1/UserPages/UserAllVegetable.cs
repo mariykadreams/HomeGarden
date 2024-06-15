@@ -1,16 +1,12 @@
 ﻿using HomeGarden.Plants;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
-using UI.Multifunctional;
 using HomeGarden.Core_Aplication;
 using HomeGarden.Models;
+using UI.Multifunctional;
 
 namespace UI.UserPages
 {
@@ -21,11 +17,64 @@ namespace UI.UserPages
         public UserAllVegetable()
         {
             InitializeComponent();
+            UpdateWelcomeMessage();
             PlantService.LoadPlantsFromXml();
             PlantsDataGridView(PlantService.Plants);
+            this.Shown += UserAllVegetable_Shown;
+            this.dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
+            this.View_Button.Enabled = false;
         }
 
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Add_Button.Enabled = true;
+                View_Button.Enabled = true;
+            }
+            else
+            {
+                Add_Button.Enabled = false;
+                View_Button.Enabled = false;
+            }
+        }
+
+        private void UpdateWelcomeMessage()
+        {
+            if (MyApplication.NowUser != null)
+            {
+                Welcome_label.Text = TruncateString($"Welcome, {MyApplication.NowUser.FullName}!", Welcome_label, "Welcome, ...");
+            }
+            else
+            {
+                Welcome_label.Text = "Welcome, User!";
+            }
+        }
+
+        private string TruncateString(string text, Label label, string prefix = "")
+        {
+            using (Graphics g = label.CreateGraphics())
+            {
+                SizeF size = g.MeasureString(text, label.Font);
+                if (size.Width > label.Width)
+                {
+                    string ellipsis = "...";
+                    float ellipsisWidth = g.MeasureString(ellipsis, label.Font).Width;
+
+                    for (int i = text.Length - 1; i > 0; i--)
+                    {
+                        string truncatedText = text.Substring(0, i) + ellipsis;
+                        size = g.MeasureString(truncatedText, label.Font);
+                        if (size.Width <= label.Width)
+                        {
+                            return truncatedText;
+                        }
+                    }
+                }
+            }
+            return text;
+        }
 
         private void PlantsDataGridView(List<Plant> plants)
         {
@@ -41,7 +90,7 @@ namespace UI.UserPages
             this.dataGridView1.Columns["Status"].HeaderText = "Status";
             this.dataGridView1.Columns["ShortDesciption"].HeaderText = "Short Description";
             this.dataGridView1.Columns["Level"].HeaderText = "Level";
-            this.dataGridView1.Columns["WateringFrequency"].HeaderText = "WateringFrequency";
+            this.dataGridView1.Columns["WateringFrequency"].HeaderText = "Watering Frequency";
 
             for (int i = 1; i < this.dataGridView1.Columns.Count; i++)
             {
@@ -51,6 +100,10 @@ namespace UI.UserPages
             this.dataGridView1.ClearSelection();
         }
 
+        private void UserAllVegetable_Shown(object sender, EventArgs e)
+        {
+            this.dataGridView1.ClearSelection(); 
+        }
 
         private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -83,12 +136,10 @@ namespace UI.UserPages
             PlantsDataGridView(PlantService.Plants);
         }
 
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.View_Button.Enabled = true;
         }
-
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -98,7 +149,6 @@ namespace UI.UserPages
             {
                 Application.Exit();
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -118,6 +168,7 @@ namespace UI.UserPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void OpenUserMainPage(object obj)
         {
             Application.Run(new UserMainPage());
@@ -131,17 +182,21 @@ namespace UI.UserPages
 
                 if (selectedPlant != null)
                 {
-                    // Создаем новый объект UserPlantInfo
-                    var userPlantInfo = new HomeGarden.Models.UserPlantInfo(selectedPlant); // Use the fully qualified name
+                    var userPlantInfo = new HomeGarden.Models.UserPlantInfo(selectedPlant);
 
-                    // Получаем текущего пользователя
                     User currentUser = MyApplication.NowUser;
 
                     if (currentUser != null)
                     {
-                        // Добавляем растение к пользователю
-                        UserService.AddPlantToUser(currentUser, userPlantInfo);
-                        MessageBox.Show("Plant added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (!currentUser.MyPlants.Any(p => p.Id == selectedPlant.Id))
+                        {
+                            UserService.AddPlantToUser(currentUser, userPlantInfo);
+                            MessageBox.Show("Plant added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: This plant is already in your collection!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {

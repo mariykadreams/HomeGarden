@@ -304,9 +304,10 @@
             // Time_Input
             // 
             Time_Input.AutoSize = true;
-            Time_Input.Location = new Point(430, 45);
+            Time_Input.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            Time_Input.Location = new Point(451, 41);
             Time_Input.Name = "Time_Input";
-            Time_Input.Size = new Size(41, 20);
+            Time_Input.Size = new Size(40, 20);
             Time_Input.TabIndex = 3;
             Time_Input.Text = "Date";
             Time_Input.Click += Time_Input_Click;
@@ -314,9 +315,10 @@
             // Date_Input
             // 
             Date_Input.AutoSize = true;
-            Date_Input.Location = new Point(430, 86);
+            Date_Input.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
+            Date_Input.Location = new Point(451, 82);
             Date_Input.Name = "Date_Input";
-            Date_Input.Size = new Size(42, 20);
+            Date_Input.Size = new Size(41, 20);
             Date_Input.TabIndex = 2;
             Date_Input.Text = "Time";
             Date_Input.Click += Date_Input_Click;
@@ -324,18 +326,20 @@
             // Time_Label
             // 
             Time_Label.AutoSize = true;
-            Time_Label.Location = new Point(359, 86);
+            Time_Label.Font = new Font("Elephant", 9F);
+            Time_Label.Location = new Point(342, 82);
             Time_Label.Name = "Time_Label";
-            Time_Label.Size = new Size(42, 20);
+            Time_Label.Size = new Size(48, 20);
             Time_Label.TabIndex = 1;
             Time_Label.Text = "Time";
             // 
             // Date_Label
             // 
             Date_Label.AutoSize = true;
-            Date_Label.Location = new Point(359, 45);
+            Date_Label.Font = new Font("Elephant", 9F);
+            Date_Label.Location = new Point(342, 41);
             Date_Label.Name = "Date_Label";
-            Date_Label.Size = new Size(41, 20);
+            Date_Label.Size = new Size(46, 20);
             Date_Label.TabIndex = 0;
             Date_Label.Text = "Date";
             // 

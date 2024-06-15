@@ -11,14 +11,12 @@ namespace UI.Multifunctional
     {
         private Plant plant;
         private bool hideWateringControls;
-        private Dictionary<string, UserPlantPreferences> userPreferences;
 
         public PlantInfo(Plant plant, bool hideWateringControls = false)
         {
             InitializeComponent();
             this.plant = plant;
             this.hideWateringControls = hideWateringControls;
-            this.userPreferences = UserWateringService.LoadPreferences();
         }
 
         private void PlantInfo_Load(object sender, EventArgs e)
@@ -32,25 +30,15 @@ namespace UI.Multifunctional
                 SetControlsForAdmin();
             }
 
-            if (hideWateringControls)
-            {
-                this.checkBox1.Visible = false;
-                this.label10.Visible = false;
-                this.time_whenWaterr.Visible = false;
-            }
+         
 
             LoadPlantInfo();
-            UpdateWateringTime();
         }
 
         private void SetControlsForUser()
         {
             this.btnSave.Visible = false;
             this.btnCancel.Visible = false;
-
-            this.checkBox1.Visible = true;
-            this.label10.Visible = true;
-            this.time_whenWaterr.Visible = true;
 
             this.textBox_name.ReadOnly = true;
             this.textBox_species.ReadOnly = true;
@@ -74,9 +62,7 @@ namespace UI.Multifunctional
         {
             this.btnSave.Visible = true;
             this.btnCancel.Visible = true;
-            this.checkBox1.Visible = false;
-            this.label10.Visible = false;
-            this.time_whenWaterr.Visible = false;
+       
 
             this.textBox_name.ReadOnly = false;
             this.textBox_species.ReadOnly = false;
@@ -179,22 +165,8 @@ namespace UI.Multifunctional
         }
 
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateWateringTime();
-        }
+      
 
-        private void UpdateWateringTime()
-        {
-            if (checkBox1.Checked)
-            {
-                DateTime wateringTime = DateTime.Today.AddHours(10);
-                time_whenWaterr.Text = wateringTime.ToString("HH:mm");
-            }
-            else
-            {
-                time_whenWaterr.Text = "You need to water now!";
-            }
-        }
+       
     }
 }

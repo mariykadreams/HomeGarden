@@ -229,6 +229,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(899, 612);
             dataGridView1.TabIndex = 13;
+            dataGridView1.ColumnHeaderMouseClick += DataGridView1_ColumnHeaderMouseClick;
             // 
             // Lebel_above_DataGrid
             // 

@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
 using HomeGarden.Plants;
 using UI.Multifunctional;
 
@@ -22,6 +16,12 @@ namespace UI.AdminPages
             InitializeComponent();
             PlantService.LoadPlantsFromXml();
             PlantsDataGridView(PlantService.Plants);
+            this.Shown += AllVegetables_Shown;
+        }
+
+        private void AllVegetables_Shown(object sender, EventArgs e)
+        {
+            this.dataGridView1.ClearSelection();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -32,7 +32,6 @@ namespace UI.AdminPages
             {
                 Application.Exit();
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,7 +41,7 @@ namespace UI.AdminPages
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
-            };
+            }
         }
 
         private void AllUsers_Button_Click(object sender, EventArgs e)
@@ -52,6 +51,7 @@ namespace UI.AdminPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void OpenformAllUsers(object obj)
         {
             Application.Run(new AllUsers());
@@ -64,6 +64,7 @@ namespace UI.AdminPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void OpenformHome(object obj)
         {
             Application.Run(new MainAdminPage());
@@ -71,9 +72,9 @@ namespace UI.AdminPages
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            NewPlant NewPlant = new NewPlant();
-            NewPlant.ShowDialog();
-            if (NewPlant.PlantAdded)
+            NewPlant newPlant = new NewPlant();
+            newPlant.ShowDialog();
+            if (newPlant.PlantAdded)
             {
                 PlantService.LoadPlantsFromXml();
                 PlantsDataGridView(PlantService.Plants);

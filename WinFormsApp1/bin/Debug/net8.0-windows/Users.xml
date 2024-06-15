@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UsersList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Id>8e57e671-0504-4c49-a203-3685b05c17e2</Id>
+    <FullName>Monica Kykurumi</FullName>
+    <Email>monica@gmail.com</Email>
+    <Password>123456</Password>
+    <JoinDate>2024-05-18T13:44:43.3697743Z</JoinDate>
+    <MyPlants />
+  </User>
+  <User>
+    <Id>ad9ac755-7561-49e8-a702-4faded87519e</Id>
+    <FullName>Andrei</FullName>
+    <Email>andrei@gmail.com</Email>
+    <Password>12345678M</Password>
+    <JoinDate>2024-05-23T18:35:58.6340035Z</JoinDate>
+    <MyPlants>
+      <Plant xsi:type="Vegetable">
+        <Id>53ebed4a-6142-4245-99d1-af2c1def4872</Id>
+        <Type>Vegetable</Type>
+        <Name>Tomato</Name>
+        <Species>Cherry</Species>
+        <Location>Windowsill (needs a lot of sun)</Location>
+        <Status>Healthy</Status>
+        <ShortDesciption>The cherry tomato is a type of small round tomato believed to be an intermediate genetic admixture between wild currant-type tomatoes and domesticated garden tomatoes.</ShortDesciption>
+        <Level>Hard</Level>
+        <WateringFrequency>4</WateringFrequency>
+        <Size>Small</Size>
+      </Plant>
+      <Plant xsi:type="Vegetable">
+        <Id>1d03dc56-cd01-44a4-b5fe-a3756ae6da4c</Id>
+        <Type>Vegetable</Type>
+        <Name>1</Name>
+        <Species>1</Species>
+        <Location>Balance between shade and sun</Location>
+        <Status>Healthy</Status>
+        <ShortDesciption>1</ShortDesciption>
+        <Level>Hard</Level>
+        <WateringFrequency>1</WateringFrequency>
+        <Size>Medium</Size>
+      </Plant>
+    </MyPlants>
+  </User>
+  <User>
+    <Id>d538b811-016b-4c77-a032-0a8c157d83a1</Id>
+    <FullName>test</FullName>
+    <Email>test@gmail.com</Email>
+    <Password>12345678M</Password>
+    <JoinDate>2024-05-24T07:29:57.103282Z</JoinDate>
+    <MyPlants>
+      <Plant xsi:type="Flower">
+        <Id>d959c80d-7069-4a73-a5cd-330307cffc67</Id>
+        <Type>Flower</Type>
+        <Name>Rose</Name>
+        <Species>Rose</Species>
+        <Location>Windowsill (needs a lot of sun)</Location>
+        <Status>Healthy</Status>
+        <ShortDesciption>Beautiful and fragrant</ShortDesciption>
+        <Level>Medium</Level>
+        <WateringFrequency>7</WateringFrequency>
+        <Color>Red</Color>
+      </Plant>
+      <Plant xsi:type="Other">
+        <Id>f0221ae3-3b83-4248-80c4-0d84fd48a4aa</Id>
+        <Type>Other</Type>
+        <Name>Сactus</Name>
+        <Species>Cactaceae</Species>
+        <Location>Windowsill (needs a lot of sun)</Location>
+        <Status>Healthy</Status>
+        <ShortDesciption>Cacti are perennial plants. In nature, their life expectancy is about 100 years, in an apartment (with proper care) – up to 50.</ShortDesciption>
+        <Level>Easy</Level>
+        <WateringFrequency>31</WateringFrequency>
+      </Plant>
+    </MyPlants>
+  </User>
+</UsersList>

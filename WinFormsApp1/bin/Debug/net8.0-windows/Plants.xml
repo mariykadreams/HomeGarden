@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlantsList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Plant xsi:type="Other">
+    <Id>f0221ae3-3b83-4248-80c4-0d84fd48a4aa</Id>
+    <Type>Other</Type>
+    <Name>Сactus</Name>
+    <Species>Cactaceae</Species>
+    <Location>Windowsill (needs a lot of sun)</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>Cacti are perennial plants. In nature, their life expectancy is about 100 years, in an apartment (with proper care) – up to 50.</ShortDesciption>
+    <Level>Easy</Level>
+    <WateringFrequency>31</WateringFrequency>
+  </Plant>
+  <Plant xsi:type="Vegetable">
+    <Id>ef5913ee-60c4-4657-872e-575f8c75688a</Id>
+    <Type>Vegetable</Type>
+    <Name>Cucumbers</Name>
+    <Species>Cucumber</Species>
+    <Location>Windowsill (needs a lot of sun)</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>Ukranian traditional variety, which was created in Kharkiv</ShortDesciption>
+    <Level>Easy</Level>
+    <WateringFrequency>11</WateringFrequency>
+    <Size>Small</Size>
+  </Plant>
+  <Plant xsi:type="Flower">
+    <Id>d959c80d-7069-4a73-a5cd-330307cffc67</Id>
+    <Type>Flower</Type>
+    <Name>Rose</Name>
+    <Species>Rose</Species>
+    <Location>Windowsill (needs a lot of sun)</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>Beautiful and fragrant</ShortDesciption>
+    <Level>Medium</Level>
+    <WateringFrequency>7</WateringFrequency>
+    <Color>Red</Color>
+  </Plant>
+  <Plant xsi:type="Vegetable">
+    <Id>53ebed4a-6142-4245-99d1-af2c1def4872</Id>
+    <Type>Vegetable</Type>
+    <Name>Tomato</Name>
+    <Species>Cherry</Species>
+    <Location>Windowsill (needs a lot of sun)</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>The cherry tomato is a type of small round tomato believed to be an intermediate genetic admixture between wild currant-type tomatoes and domesticated garden tomatoes.</ShortDesciption>
+    <Level>Hard</Level>
+    <WateringFrequency>4</WateringFrequency>
+    <Size>Small</Size>
+  </Plant>
+  <Plant xsi:type="Vegetable">
+    <Id>812ca1f1-8560-483b-98a6-8ca1646220c7</Id>
+    <Type>Vegetable</Type>
+    <Name>q1</Name>
+    <Species>q1</Species>
+    <Location>Shadow</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>qqq</ShortDesciption>
+    <Level>Medium</Level>
+    <WateringFrequency>3</WateringFrequency>
+    <Size>Medium</Size>
+  </Plant>
+  <Plant xsi:type="Vegetable">
+    <Id>1d03dc56-cd01-44a4-b5fe-a3756ae6da4c</Id>
+    <Type>Vegetable</Type>
+    <Name>1</Name>
+    <Species>1</Species>
+    <Location>Balance between shade and sun</Location>
+    <Status>Healthy</Status>
+    <ShortDesciption>1</ShortDesciption>
+    <Level>Hard</Level>
+    <WateringFrequency>1</WateringFrequency>
+    <Size>Medium</Size>
+  </Plant>
+</PlantsList>

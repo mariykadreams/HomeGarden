@@ -2,13 +2,7 @@
 using HomeGarden.Models;
 using HomeGarden.Plants;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI.UserPages
@@ -16,65 +10,18 @@ namespace UI.UserPages
     public partial class UserPlantInfo : Form
     {
         private Plant plant;
-        private bool hideWateringControls;
-        private Dictionary<string, UserPlantPreferences> userPreferences;
 
         public UserPlantInfo(Plant plant, bool hideWateringControls = false)
         {
             InitializeComponent();
             this.plant = plant;
-            this.hideWateringControls = hideWateringControls;
-            this.userPreferences = UserWateringService.LoadPreferences();
-        }
-
-        private void PlantInfo_Load(object sender, EventArgs e)
-        {
-            if (MyApplication.UserMode == MyApplication.Mode.User)
-            {
-                SetControlsForUser();
-            }
-           
-
-            if (hideWateringControls)
-            {
-                this.checkBox1.Visible = false;
-                this.label10.Visible = false;
-                this.time_whenWaterr.Visible = false;
-            }
-
             LoadPlantInfo();
-            UpdateWateringTime();
         }
-
-        private void SetControlsForUser()
-        {
-           
-            this.checkBox1.Visible = true;
-            this.label10.Visible = true;
-            this.time_whenWaterr.Visible = true;
-
-            this.textBox_name.ReadOnly = true;
-            this.textBox_species.ReadOnly = true;
-            this.textBox_desciption.ReadOnly = true;
-            this.comboBox1_Level.Enabled = false;
-            this.numericUpDown_Water.Enabled = false;
-            this.comboBox_location.Enabled = false;
-
-            if (this.textBox_color.Visible)
-            {
-                this.textBox_color.ReadOnly = true;
-            }
-
-            if (this.comboBox1_size.Visible)
-            {
-                this.comboBox1_size.Enabled = false;
-            }
-        }
-
-       
 
         private void LoadPlantInfo()
         {
+            if (plant == null) return;
+
             this.Input_type.Text = plant.Type;
             this.textBox_name.Text = plant.Name;
             this.textBox_species.Text = plant.Species;
@@ -82,6 +29,7 @@ namespace UI.UserPages
             this.comboBox1_Level.Text = plant.Level;
             this.numericUpDown_Water.Value = plant.WateringFrequency;
             this.comboBox_location.Text = plant.Location;
+            this.textBox1.Text = plant.Status;
 
             if (plant is Flower flower)
             {
@@ -106,84 +54,86 @@ namespace UI.UserPages
                 this.comboBox1_size.Visible = false;
                 this.label5.Visible = false;
             }
-        }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            plant.Name = this.textBox_name.Text;
-            plant.Species = this.textBox_species.Text;
-            plant.ShortDesciption = this.textBox_desciption.Text;
-            plant.Level = this.comboBox1_Level.Text;
-            plant.WateringFrequency = Convert.ToInt32(this.numericUpDown_Water.Value);
-            plant.Location = this.comboBox_location.Text;
-
-            if (plant is Flower flower)
+            var wateringHistory = UserWateringService.GetWateringInfoByPlant(plant.Id.ToString());
+            if (wateringHistory != null && wateringHistory.Any())
             {
-                flower.Color = this.textBox_color.Text;
+                time_whenWaterr.Text = "Last watered by you: " + (wateringHistory.FirstOrDefault(w => w.UserId == MyApplication.CurrentUserId)?.LastWatered.ToString() ?? "Never");
             }
-            else if (plant is Vegetable vegetable)
+            else
             {
-                vegetable.Size = this.comboBox1_size.Text;
+                time_whenWaterr.Text = "Not watered yet.";
             }
 
-            PlantService.UpdatePlant(plant);
-
-            this.Close();
+            CalculateNextWateringTime(wateringHistory);
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void CalculateNextWateringTime(List<UserWateringService> wateringHistory)
         {
-            if (MessageBox.Show("Are you sure you want to cancel the operation?",
-               "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (wateringHistory != null && wateringHistory.Any())
+            {
+                var lastWatering = wateringHistory.OrderByDescending(w => w.LastWatered).FirstOrDefault();
+                if (lastWatering != null)
+                {
+                    var nextWatering = lastWatering.LastWatered.AddDays(plant.WateringFrequency);
+                    if (nextWatering <= DateTime.Now)
+                    {
+                        plant.Status = "Bad Health";
+                        MessageBox.Show("You need to water your plant now!", "Watering Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        water_next.Text = "You need to water your plant now!";
+                    }
+                    else
+                    {
+                        water_next.Text = "Next watering: " + nextWatering.ToString();
+                    }
+                }
+                else
+                {
+                    plant.Status = "Bad Health";
+                    water_next.Text = "You need to water your plant now!";
+                }
+            }
+            else
+            {
+                plant.Status = "Bad Health";
+                water_next.Text = "You need to water your plant now!";
+            }
+
+            this.textBox1.Text = plant.Status;
+        }
+
+
+        private void UserPlantInfo_Load(object sender, EventArgs e)
+        {
+            LoadPlantInfo();
+        }
+
+        private void button_Iwatered_Click(object sender, EventArgs e)
+        {
+            var wateringService = new UserWateringService
+            {
+                UserId = MyApplication.CurrentUserId,
+                PlantId = plant.Id.ToString(),
+                OperationId = Guid.NewGuid().ToString(),
+                LastWatered = DateTime.Now
+
+            };
+            plant.Status = "Healthy";
+            UserWateringService.SaveWateringInfo(wateringService);
+            LoadPlantInfo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?",
+              "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void water_next_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void time_whenWaterr_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SaveUserPreferences()
-        {
-            userPreferences[plant.Id.ToString()] = new UserPlantPreferences
-            {
-                PlantId = plant.Id.ToString(),
-                IsWateringChecked = checkBox1.Checked
-            };
-
-            UserWateringService.SavePreferences(userPreferences);
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateWateringTime();
-            SaveUserPreferences();
-        }
-
-        private void UpdateWateringTime()
-        {
-            if (checkBox1.Checked)
-            {
-                DateTime wateringTime = DateTime.Today.AddHours(10);
-                time_whenWaterr.Text = wateringTime.ToString("HH:mm");
-            }
-            else
-            {
-                time_whenWaterr.Text = "You need to water now!";
-            }
         }
     }
 }
-

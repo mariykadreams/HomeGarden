@@ -1,14 +1,9 @@
 ﻿using HomeGarden.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace UI.AdminPages
 {
@@ -22,9 +17,15 @@ namespace UI.AdminPages
             InitializeComponent();
             UserService.UserLoadData();
             UsersDataGridView(UserService.Users);
-
             Delete_Button.Enabled = false;
+            this.Shown += AllUsers_Shown;
         }
+
+        private void AllUsers_Shown(object sender, EventArgs e)
+        {
+            this.User_dataGridView.ClearSelection();
+        }
+
         private void dataGridView_editions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.Delete_Button.Enabled = true;
@@ -36,19 +37,17 @@ namespace UI.AdminPages
         {
             this.User_dataGridView.DataSource = null;
             this.User_dataGridView.DataSource = Users;
-
             this.User_dataGridView.Columns[0].HeaderText = "Guid Id";
             this.User_dataGridView.Columns[1].HeaderText = "Full Name";
             this.User_dataGridView.Columns[2].HeaderText = "Email";
             this.User_dataGridView.Columns[3].HeaderText = "Password";
-            this.User_dataGridView.Columns[4].HeaderText = "Data of Joining";
+            this.User_dataGridView.Columns[4].HeaderText = "Date of Joining";
 
             for (int i = 0; i < this.User_dataGridView.Columns.Count; i++)
             {
                 this.User_dataGridView.Columns[i].Width = this.User_dataGridView.Width / this.User_dataGridView.Columns.Count;
             }
             this.User_dataGridView.ClearSelection();
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -59,7 +58,6 @@ namespace UI.AdminPages
             {
                 Application.Exit();
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,7 +67,7 @@ namespace UI.AdminPages
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
-            };
+            }
         }
 
         private void Delete_Button_Click(object sender, EventArgs e)
@@ -82,6 +80,8 @@ namespace UI.AdminPages
                     selectedUser = this.User_dataGridView.SelectedRows[0].DataBoundItem as User;
                     if (selectedUser != null)
                     {
+                        UserWateringService.DeleteWateringInfoByUser(selectedUser.Id.ToString());
+
                         UserService.DeleteUser(selectedUser);
                         UsersDataGridView(UserService.Users);
                         this.Delete_Button.Enabled = false;
@@ -102,16 +102,17 @@ namespace UI.AdminPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void Openform(object obj)
         {
             Application.Run(new MainAdminPage());
         }
 
-
         private void AllUsers_Load(object sender, EventArgs e)
         {
 
         }
+
         private void AllUsers_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -124,6 +125,7 @@ namespace UI.AdminPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void OpenformVegetable(object obj)
         {
             Application.Run(new AllVegetables());

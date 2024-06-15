@@ -30,8 +30,6 @@
         {
             label11 = new Label();
             time_whenWaterr = new Label();
-            label10 = new Label();
-            checkBox1 = new CheckBox();
             panel1 = new Panel();
             splitContainer8 = new SplitContainer();
             label9 = new Label();
@@ -60,6 +58,12 @@
             splitContainer = new SplitContainer();
             label1 = new Label();
             textBox_name = new TextBox();
+            water_next = new Label();
+            button1 = new Button();
+            button_Iwatered = new Button();
+            splitContainer9 = new SplitContainer();
+            label10 = new Label();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
             splitContainer8.Panel1.SuspendLayout();
@@ -98,48 +102,34 @@
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
             splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer9).BeginInit();
+            splitContainer9.Panel1.SuspendLayout();
+            splitContainer9.Panel2.SuspendLayout();
+            splitContainer9.SuspendLayout();
             SuspendLayout();
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Elephant", 11.999999F);
-            label11.Location = new Point(400, 85);
+            label11.Location = new Point(388, 35);
             label11.Name = "label11";
-            label11.Size = new Size(248, 26);
+            label11.Size = new Size(297, 26);
             label11.TabIndex = 34;
-            label11.Text = "Learn more about plant";
+            label11.Text = "Learn more about your plant";
             // 
             // time_whenWaterr
             // 
             time_whenWaterr.AutoSize = true;
-            time_whenWaterr.Location = new Point(691, 526);
+            time_whenWaterr.Location = new Point(592, 512);
             time_whenWaterr.Name = "time_whenWaterr";
             time_whenWaterr.Size = new Size(82, 20);
             time_whenWaterr.TabIndex = 33;
             time_whenWaterr.Text = "time_water";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(515, 526);
-            label10.Name = "label10";
-            label10.Size = new Size(136, 20);
-            label10.TabIndex = 32;
-            label10.Text = "Next time to water:";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(198, 525);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(202, 24);
-            checkBox1.TabIndex = 31;
-            checkBox1.Text = "Did you water your plant?";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
+            panel1.Controls.Add(splitContainer9);
             panel1.Controls.Add(splitContainer8);
             panel1.Controls.Add(splitContainer7);
             panel1.Controls.Add(splitContainer6);
@@ -149,9 +139,9 @@
             panel1.Controls.Add(splitContainer4);
             panel1.Controls.Add(splitContainer1);
             panel1.Controls.Add(splitContainer);
-            panel1.Location = new Point(182, 140);
+            panel1.Location = new Point(205, 87);
             panel1.Name = "panel1";
-            panel1.Size = new Size(672, 361);
+            panel1.Size = new Size(672, 422);
             panel1.TabIndex = 30;
             // 
             // splitContainer8
@@ -217,6 +207,7 @@
             // 
             // numericUpDown_Water
             // 
+            numericUpDown_Water.Enabled = false;
             numericUpDown_Water.Location = new Point(14, 13);
             numericUpDown_Water.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDown_Water.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -254,6 +245,7 @@
             // comboBox1_Level
             // 
             comboBox1_Level.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1_Level.Enabled = false;
             comboBox1_Level.Items.AddRange(new object[] { "Easy", "Medium", "Hard" });
             comboBox1_Level.Location = new Point(15, 13);
             comboBox1_Level.Name = "comboBox1_Level";
@@ -288,6 +280,7 @@
             // 
             // textBox_color
             // 
+            textBox_color.Enabled = false;
             textBox_color.Location = new Point(8, 13);
             textBox_color.Name = "textBox_color";
             textBox_color.Size = new Size(224, 27);
@@ -321,6 +314,7 @@
             // 
             // textBox_desciption
             // 
+            textBox_desciption.Enabled = false;
             textBox_desciption.Location = new Point(6, 12);
             textBox_desciption.Multiline = true;
             textBox_desciption.Name = "textBox_desciption";
@@ -346,7 +340,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 15);
+            label3.Location = new Point(6, 16);
             label3.Name = "label3";
             label3.Size = new Size(66, 20);
             label3.TabIndex = 0;
@@ -356,6 +350,7 @@
             // comboBox_location
             // 
             comboBox_location.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox_location.Enabled = false;
             comboBox_location.FormattingEnabled = true;
             comboBox_location.Items.AddRange(new object[] { "Windowsill (needs a lot of sun)", "Balance between shade and sun", "Shadow" });
             comboBox_location.Location = new Point(14, 15);
@@ -392,6 +387,7 @@
             // comboBox1_size
             // 
             comboBox1_size.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1_size.Enabled = false;
             comboBox1_size.Items.AddRange(new object[] { "Small", "Medium", "Large" });
             comboBox1_size.Location = new Point(9, 13);
             comboBox1_size.Name = "comboBox1_size";
@@ -426,6 +422,7 @@
             // 
             // textBox_species
             // 
+            textBox_species.Enabled = false;
             textBox_species.Location = new Point(15, 12);
             textBox_species.Name = "textBox_species";
             textBox_species.Size = new Size(198, 27);
@@ -459,24 +456,93 @@
             // 
             // textBox_name
             // 
+            textBox_name.Enabled = false;
             textBox_name.Location = new Point(13, 12);
             textBox_name.Name = "textBox_name";
             textBox_name.Size = new Size(198, 27);
             textBox_name.TabIndex = 0;
             // 
+            // water_next
+            // 
+            water_next.AutoSize = true;
+            water_next.Location = new Point(592, 558);
+            water_next.Name = "water_next";
+            water_next.Size = new Size(116, 20);
+            water_next.TabIndex = 36;
+            water_next.Text = "time_water_next";
+            water_next.Click += water_next_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(44, 110, 73);
+            button1.Font = new Font("Elephant", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(440, 614);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 50);
+            button1.TabIndex = 37;
+            button1.Text = "Exit";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button_Iwatered
+            // 
+            button_Iwatered.Location = new Point(306, 533);
+            button_Iwatered.Name = "button_Iwatered";
+            button_Iwatered.Size = new Size(192, 29);
+            button_Iwatered.TabIndex = 38;
+            button_Iwatered.Text = "I watered my plant";
+            button_Iwatered.UseVisualStyleBackColor = true;
+            button_Iwatered.Click += button_Iwatered_Click;
+            // 
+            // splitContainer9
+            // 
+            splitContainer9.Location = new Point(208, 360);
+            splitContainer9.Name = "splitContainer9";
+            // 
+            // splitContainer9.Panel1
+            // 
+            splitContainer9.Panel1.Controls.Add(label10);
+            // 
+            // splitContainer9.Panel2
+            // 
+            splitContainer9.Panel2.Controls.Add(textBox1);
+            splitContainer9.Size = new Size(300, 52);
+            splitContainer9.SplitterDistance = 75;
+            splitContainer9.TabIndex = 39;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(6, 16);
+            label10.Name = "label10";
+            label10.Size = new Size(49, 20);
+            label10.TabIndex = 0;
+            label10.Text = "Status";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(3, 13);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(224, 27);
+            textBox1.TabIndex = 2;
+            // 
             // UserPlantInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1036, 635);
+            ClientSize = new Size(1036, 685);
+            Controls.Add(button_Iwatered);
+            Controls.Add(button1);
+            Controls.Add(water_next);
             Controls.Add(panel1);
             Controls.Add(label11);
             Controls.Add(time_whenWaterr);
-            Controls.Add(label10);
-            Controls.Add(checkBox1);
             Name = "UserPlantInfo";
             Text = "UserPlantInfo";
-            Load += PlantInfo_Load;
+            Load += UserPlantInfo_Load;
             panel1.ResumeLayout(false);
             splitContainer8.Panel1.ResumeLayout(false);
             splitContainer8.Panel1.PerformLayout();
@@ -529,6 +595,12 @@
             splitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
             splitContainer.ResumeLayout(false);
+            splitContainer9.Panel1.ResumeLayout(false);
+            splitContainer9.Panel1.PerformLayout();
+            splitContainer9.Panel2.ResumeLayout(false);
+            splitContainer9.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer9).EndInit();
+            splitContainer9.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -537,8 +609,6 @@
 
         private Label label11;
         private Label time_whenWaterr;
-        private Label label10;
-        private CheckBox checkBox1;
         private Panel panel1;
         private SplitContainer splitContainer8;
         private Label label9;
@@ -567,5 +637,11 @@
         private SplitContainer splitContainer;
         private Label label1;
         private TextBox textBox_name;
+        private Label water_next;
+        private Button button1;
+        private Button button_Iwatered;
+        private SplitContainer splitContainer9;
+        private Label label10;
+        private TextBox textBox1;
     }
 }

@@ -3,15 +3,11 @@ using HomeGarden.Models;
 using HomeGarden.Plants;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Numerics;
+using System.Threading;
 using System.Windows.Forms;
-using UI.AdminPages;
-using UI.Multifunctional;
 
 namespace UI.UserPages
 {
@@ -24,6 +20,8 @@ namespace UI.UserPages
             InitializeComponent();
             UpdateWelcomeMessage();
             MyPlantsUpdate(MyApplication.NowUser.MyPlants);
+            this.Shown += UserMainPage_Shown; 
+            this.dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -34,7 +32,6 @@ namespace UI.UserPages
             {
                 Application.Exit();
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,26 +54,56 @@ namespace UI.UserPages
 
         }
 
+        private void DataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            switch (this.dataGridView1.Columns[e.ColumnIndex].Name)
+            {
+                case "Type":
+                    UserService.SortPlantsByType(MyApplication.NowUser);
+                    break;
+                case "Name":
+                    UserService.SortPlantsByName(MyApplication.NowUser);
+                    break;
+                case "Species":
+                    UserService.SortPlantsBySpecies(MyApplication.NowUser);
+                    break;
+                case "Location":
+                    UserService.SortPlantsByLocation(MyApplication.NowUser);
+                    break;
+                case "Status":
+                    UserService.SortPlantsByStatus(MyApplication.NowUser);
+                    break;
+                case "Level":
+                    UserService.SortPlantsByLevel(MyApplication.NowUser);
+                    break;
+                case "WateringFrequency":
+                    UserService.SortPlantsByWateringFrequency(MyApplication.NowUser);
+                    break;
+                default:
+                    break;
+            }
+            MyPlantsUpdate(MyApplication.NowUser.MyPlants);
+        }
+
+
         private void MyPlantsUpdate(List<Plant> plants)
         {
-            // Hide DataGridView if no plants
             if (MyApplication.NowUser.MyPlants.Count == 0)
             {
                 this.dataGridView1.Visible = false;
                 this.Lebel_above_DataGrid.Visible = true;
+                View_Button.Enabled = false;
+                button_Delete.Enabled = false;
             }
             else
             {
                 this.Lebel_above_DataGrid.Visible = false;
                 this.dataGridView1.Visible = true;
 
-                // Clear current DataSource before updating
                 this.dataGridView1.DataSource = null;
 
-                // Set the new DataSource
                 this.dataGridView1.DataSource = MyApplication.NowUser.MyPlants;
 
-                // Set column headers
                 this.dataGridView1.Columns["Id"].Visible = false;
                 this.dataGridView1.Columns[1].HeaderText = "Type";
                 this.dataGridView1.Columns[2].HeaderText = "Name";
@@ -87,16 +114,26 @@ namespace UI.UserPages
                 this.dataGridView1.Columns[7].HeaderText = "Level";
                 this.dataGridView1.Columns[8].HeaderText = "Water";
 
-                // Adjust column widths
                 for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
                 {
-                    this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
+                    this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / (this.dataGridView1.Columns.Count - 1);
                 }
             }
-            // Clear selection to prevent issues with deleted rows
+
             dataGridView1.ClearSelection();
+            UpdateButtonsState();
         }
 
+        private void UserMainPage_Shown(object sender, EventArgs e)
+        {
+            this.dataGridView1.ClearSelection();
+            UpdateButtonsState();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            UpdateButtonsState();
+        }
 
         private void UpdateWelcomeMessage()
         {
@@ -146,6 +183,7 @@ namespace UI.UserPages
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
         private void OpenUserAllVegetable(object obj)
         {
             Application.Run(new UserAllVegetable());
@@ -155,19 +193,21 @@ namespace UI.UserPages
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Get the selected plant from DataGridView
                 Plant selectedPlant = dataGridView1.SelectedRows[0].DataBoundItem as Plant;
 
                 if (selectedPlant != null)
                 {
-                    // Remove the plant from the user's plant list
+                    string currentUserId = MyApplication.CurrentUserId;
+
                     UserService.DeletePlantFromUser(MyApplication.NowUser, selectedPlant);
 
-                    // Update the DataGridView after deletion
+                    UserWateringService.DeleteWateringInfo(currentUserId, selectedPlant.Id.ToString());
+
                     MyPlantsUpdate(MyApplication.NowUser.MyPlants);
                 }
             }
         }
+
 
         private void View_Button_Click(object sender, EventArgs e)
         {
@@ -183,11 +223,20 @@ namespace UI.UserPages
                 }
             }
         }
-          private void PlantInfo_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void PlantInfo_FormClosed(object sender, FormClosedEventArgs e)
         {
             PlantService.LoadPlantsFromXml();
             MyPlantsUpdate(MyApplication.NowUser.MyPlants);
         }
 
+        private void UpdateButtonsState()
+        {
+            bool hasPlants = MyApplication.NowUser.MyPlants.Count > 0;
+            bool isPlantSelected = dataGridView1.SelectedRows.Count > 0;
+
+            View_Button.Enabled = hasPlants && isPlantSelected;
+            button_Delete.Enabled = hasPlants && isPlantSelected;
+        }
     }
 }

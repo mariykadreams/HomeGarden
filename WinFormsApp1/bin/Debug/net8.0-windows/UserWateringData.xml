@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUserWateringService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UserWateringService>
+    <UserId>ad9ac755-7561-49e8-a702-4faded87519e</UserId>
+    <PlantId>53ebed4a-6142-4245-99d1-af2c1def4872</PlantId>
+    <OperationId>981c3cca-741d-41ba-98fd-a6f38a1b3685</OperationId>
+    <LastWatered>2024-05-23T22:48:00.8953893+03:00</LastWatered>
+  </UserWateringService>
+  <UserWateringService>
+    <UserId>07c7f56e-30ce-459e-b848-961d931afd58</UserId>
+    <PlantId>812ca1f1-8560-483b-98a6-8ca1646220c7</PlantId>
+    <OperationId>2d6bd237-3130-4230-b837-0b01b06d1446</OperationId>
+    <LastWatered>2024-05-23T22:50:43.8000998+03:00</LastWatered>
+  </UserWateringService>
+  <UserWateringService>
+    <UserId>07c7f56e-30ce-459e-b848-961d931afd58</UserId>
+    <PlantId>1d03dc56-cd01-44a4-b5fe-a3756ae6da4c</PlantId>
+    <OperationId>6e329822-998d-4008-89e2-3a6632ee4c7e</OperationId>
+    <LastWatered>2024-05-23T22:50:58.9509795+03:00</LastWatered>
+  </UserWateringService>
+  <UserWateringService>
+    <UserId>d538b811-016b-4c77-a032-0a8c157d83a1</UserId>
+    <PlantId>f0221ae3-3b83-4248-80c4-0d84fd48a4aa</PlantId>
+    <OperationId>9dd6f377-de40-4f01-a7ad-a359c601e253</OperationId>
+    <LastWatered>2024-05-24T13:45:44.0774546+03:00</LastWatered>
+  </UserWateringService>
+</ArrayOfUserWateringService>

@@ -1,0 +1,66 @@
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.AssemblyReference.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.exe
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.dll.config
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.deps.json
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.runtimeconfig.json
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.pdb
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.AllUsers.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.AllVegetables.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.MainAdminPage.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.NewPlant.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Multifunctional.Filtration.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Multifunctional.PlantInfo.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Properties.Resources.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI1.Register.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI1.SignInUser.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserAllVegetable.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserMainPage.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserPlantInfo.resources
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AssemblyInfo.cs
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.CopyComplete
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\refint\UI.dll
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.pdb
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.genruntimeconfig.cache
+C:\Users\Mari\Desktop\HomeGarden-master (1)\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\ref\UI.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.exe
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.dll.config
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.deps.json
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.runtimeconfig.json
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\UI.pdb
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\HomeGarden.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\bin\Debug\net8.0-windows\HomeGarden.pdb
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.AssemblyReference.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.AllUsers.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.AllVegetables.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.MainAdminPage.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AdminPages.NewPlant.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Multifunctional.Filtration.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Multifunctional.PlantInfo.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.Properties.Resources.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI1.Register.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI1.SignInUser.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserAllVegetable.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserMainPage.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.UserPages.UserPlantInfo.resources
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.GenerateResource.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AssemblyInfoInputs.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.AssemblyInfo.cs
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.CoreCompileInputs.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.csproj.CopyComplete
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\refint\UI.dll
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.pdb
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\UI.genruntimeconfig.cache
+C:\Users\Mari\Desktop\HomeGarde\HomeGarden-master\WinFormsApp1\obj\Debug\net8.0-windows\ref\UI.dll

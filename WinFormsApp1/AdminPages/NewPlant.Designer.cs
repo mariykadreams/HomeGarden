@@ -99,7 +99,7 @@
             // 
             Type_Label.AutoSize = true;
             Type_Label.Font = new Font("Elephant", 11.999999F);
-            Type_Label.Location = new Point(371, 62);
+            Type_Label.Location = new Point(374, 51);
             Type_Label.Name = "Type_Label";
             Type_Label.Size = new Size(147, 26);
             Type_Label.TabIndex = 0;
@@ -435,22 +435,28 @@
             // 
             // button1
             // 
-            button1.Location = new Point(264, 560);
+            button1.BackColor = Color.FromArgb(44, 110, 73);
+            button1.Font = new Font("Elephant", 9F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(235, 560);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(150, 50);
             button1.TabIndex = 6;
             button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Cencel_button
             // 
-            Cencel_button.Location = new Point(546, 560);
+            Cencel_button.BackColor = Color.FromArgb(44, 110, 73);
+            Cencel_button.Font = new Font("Elephant", 9F, FontStyle.Bold);
+            Cencel_button.ForeColor = Color.White;
+            Cencel_button.Location = new Point(506, 560);
             Cencel_button.Name = "Cencel_button";
-            Cencel_button.Size = new Size(94, 29);
+            Cencel_button.Size = new Size(150, 50);
             Cencel_button.TabIndex = 7;
             Cencel_button.Text = "Cancel";
-            Cencel_button.UseVisualStyleBackColor = true;
+            Cencel_button.UseVisualStyleBackColor = false;
             Cencel_button.Click += Cencel_button_Click;
             // 
             // NewPlant

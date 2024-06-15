@@ -58,9 +58,6 @@
             textBox_name = new TextBox();
             btnSave = new Button();
             btnCancel = new Button();
-            checkBox1 = new CheckBox();
-            label10 = new Label();
-            time_whenWaterr = new Label();
             label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer8).BeginInit();
@@ -448,35 +445,6 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(55, 484);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(202, 24);
-            checkBox1.TabIndex = 26;
-            checkBox1.Text = "Did you water your plant?";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(372, 485);
-            label10.Name = "label10";
-            label10.Size = new Size(136, 20);
-            label10.TabIndex = 27;
-            label10.Text = "Next time to water:";
-            // 
-            // time_whenWaterr
-            // 
-            time_whenWaterr.AutoSize = true;
-            time_whenWaterr.Location = new Point(548, 485);
-            time_whenWaterr.Name = "time_whenWaterr";
-            time_whenWaterr.Size = new Size(82, 20);
-            time_whenWaterr.TabIndex = 28;
-            time_whenWaterr.Text = "time_water";
-            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -493,9 +461,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(796, 629);
             Controls.Add(label11);
-            Controls.Add(time_whenWaterr);
-            Controls.Add(label10);
-            Controls.Add(checkBox1);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(panel1);
@@ -589,9 +554,6 @@
         private Label Input_type;
         private Button btnSave;
         private Button btnCancel;
-        private CheckBox checkBox1;
-        private Label label10;
-        private Label time_whenWaterr;
         private Label label11;
     }
 }
